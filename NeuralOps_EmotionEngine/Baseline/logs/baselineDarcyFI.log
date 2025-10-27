@@ -1,0 +1,53 @@
+Running on device: cuda
+Loading test db for resolution 32 with 100 samples 
+Loading test db for resolution 64 with 50 samples 
+
+The model has 4469601 parameters.
+
+### MODEL ###
+ FNO(
+  (positional_embedding): GridEmbeddingND()
+  (fno_blocks): FNOBlocks(
+    (convs): ModuleList(
+      (0-3): 4 x SpectralConv(
+        (weight): DenseTensor(shape=torch.Size([32, 32, 32, 17]), rank=None)
+      )
+    )
+    (fno_skips): ModuleList(
+      (0-3): 4 x Flattened1dConv(
+        (conv): Conv1d(32, 32, kernel_size=(1,), stride=(1,), bias=False)
+      )
+    )
+    (channel_mlp): ModuleList(
+      (0-3): 4 x ChannelMLP(
+        (fcs): ModuleList(
+          (0): Conv1d(32, 16, kernel_size=(1,), stride=(1,))
+          (1): Conv1d(16, 32, kernel_size=(1,), stride=(1,))
+        )
+      )
+    )
+    (channel_mlp_skips): ModuleList(
+      (0-3): 4 x SoftGating()
+    )
+  )
+  (lifting): ChannelMLP(
+    (fcs): ModuleList(
+      (0): Conv1d(3, 64, kernel_size=(1,), stride=(1,))
+      (1): Conv1d(64, 32, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (projection): ChannelMLP(
+    (fcs): ModuleList(
+      (0): Conv1d(32, 64, kernel_size=(1,), stride=(1,))
+      (1): Conv1d(64, 1, kernel_size=(1,), stride=(1,))
+    )
+  )
+)
+
+SKIPPING TRAINING - Using pretrained weights ! 
+
+Figure saved to: plots/fno_predictions.png
+Seeds set to 42 for reproducibility.
+Error heatmap saved to: plots/single_bit_flip.png
+Seeds set to 99090 for reproducibility.
+Error heatmap saved to: plots/multi_bit_flip.png

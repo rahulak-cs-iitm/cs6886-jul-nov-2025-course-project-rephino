@@ -1,0 +1,58 @@
+Loading original FNO model...
+Creating TMR-protected model...
+
+Original model parameters: 2,241,377
+TMR model parameters + buffers: 2,279,393
+Overhead: 38,016 (1.70%)
+
+Saving TMR-protected model to checkpoints/darcy_fno_tmr.pth...
+TMR model saved successfully!
+
+================================================================================
+TESTING TMR CORRECTION CAPABILITY
+================================================================================
+Loading test db for resolution 32 with 100 samples 
+Loading test db for resolution 64 with 50 samples 
+Loading original FNO model...
+Creating TMR-protected model...
+
+Original model parameters: 2,241,377
+TMR model parameters + buffers: 2,279,393
+Overhead: 38,016 (1.70%)
+
+Saving TMR-protected model to checkpoints/darcy_fno_tmr.pth...
+TMR model saved successfully!
+
+Test 0: Original model inference (baseline)
+MSE (original): 1.432198e-02
+
+Test 1: TMR model inference (no faults)
+MSE (TMR - no faults injected): 1.432198e-02
+Delta MSE vs original: 0.000000e+00
+
+Test 2: Single-bit error in one copy (TMR corrects)
+Injected fault in lifting.fcs.0.weight, copy 1, bit 30
+  Original: -2.710366e-01, Flipped: -2.710365e-01
+MSE (TMR - fault injected in 1 copy - corrected): 1.432198e-02
+Delta MSE vs clean: 0.000000e+00
+
+Test 3: Two-bit errors in same weight (TMR fails)
+Injected fault in lifting.fcs.0.weight, copy 1, bit 30 (standard), idx 74
+  Original: -2.3043039441e-01 (bits: 10111110011010111111010111110010)
+  Flipped:  -7.8411400021e+37 (bits: 11111110011010111111010111110010)
+  Sign changed: False
+  Magnitude changed: True
+Injected fault in lifting.fcs.0.weight, copy 2, bit 30 (standard), idx 74
+  Original: -2.3043039441e-01 (bits: 10111110011010111111010111110010)
+  Flipped:  -7.8411400021e+37 (bits: 11111110011010111111010111110010)
+  Sign changed: False
+  Magnitude changed: True
+
+MSE (TMR - 2 faults in same copy - cannot correct): 1.631446e-02
+Delta MSE vs clean: 1.992473e-03
+MSE increased by: 13.91%
+
+================================================================================
+TMR Implementation Complete
+TMR model saved to: checkpoints/darcy_fno_tmr.pth
+================================================================================

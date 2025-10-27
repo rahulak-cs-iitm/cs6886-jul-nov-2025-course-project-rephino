@@ -1,0 +1,30 @@
+Inference Times on Rimo
+-----------------------
+==================================================
+MEASURING CLEAN MODEL INFERENCE TIME
+==================================================
+Warming up...
+Running 100 inference iterations...
+
+Clean Model Inference Time Statistics:
+  Average: 2.33 ms
+  Std Dev: 0.01 ms
+  Min: 2.31 ms
+  Max: 2.37 ms
+  FPS: 428.81
+Figure saved to: plots/fno_predictions.png
+Seeds set to 42 for reproducibility.
+
+==================================================
+MEASURING SINGLE BIT FLIP INFERENCE TIME
+==================================================
+Warming up fault injection...
+Running 100 fault injection iterations...
+
+Single Bit Flip Inference Time:
+  Average: 3.94 ms
+  Std Dev: 0.05 ms
+  Overhead vs Clean: 1.61 ms (68.9%)
+Error heatmap saved to: plots/single_bit_flip.png
+Seeds set to 99090 for reproducibility.
+Error heatmap saved to: plots/multi_bit_flip.png

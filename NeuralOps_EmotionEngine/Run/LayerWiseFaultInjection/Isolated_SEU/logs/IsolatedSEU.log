@@ -1,0 +1,1937 @@
+Running on device: cuda
+Loading test db for resolution 32 with 100 samples 
+Loading test db for resolution 64 with 50 samples 
+
+Configuration:
+  Trials per layer per quadrant: 2
+  Test samples: 5
+  Bit Quadrants:
+    Q1 (bits 0-7): [0, 1, 2, 3, 4, 5, 6, 7]
+    Q2 (bits 8-15): [8, 9, 10, 11, 12, 13, 14, 15]
+    Q3 (bits 16-23): [16, 17, 18, 19, 20, 21, 22, 23]
+    Q4 (bits 24-31): [24, 25, 26, 27, 28, 29, 30, 31]
+
+============================================================
+STARTING WEIGHT FAULT INJECTION BY QUADRANT
+============================================================
+
+============================================================
+WEIGHT FAULT INJECTION - BY BIT QUADRANT
+============================================================
+
+Found 24 injectable layer components
+(SpectralConv layers counted twice: Real and Imaginary components)
+
+Collecting baseline (fault-free) outputs...
+Collected 5 baseline outputs
+
+============================================================
+Processing Quadrant: Q1 (bits 0-7)
+============================================================
+
+Layer 0/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+Before flip: (-0.26756471395492554-0.021537750959396362j)
+After flip: (-0.267564594745636-0.021537750959396362j)
+Actually changed: True
+Weight in module after injection: (-0.267564594745636-0.021537750959396362j)
+Still corrupted: True
+Before flip: (-0.2900124788284302-0.09512286633253098j)
+After flip: (-0.290014386177063-0.09512286633253098j)
+Actually changed: True
+Weight in module after injection: (-0.290014386177063-0.09512286633253098j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.018825e-12 ± 7.987952e-12
+
+Layer 1/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+Before flip: (0.05051968991756439-0.4200575053691864j)
+After flip: (0.05051968991756439-0.4200577437877655j)
+Actually changed: True
+Weight in module after injection: (0.05051968991756439-0.4200577437877655j)
+Still corrupted: True
+Before flip: (0.4416384994983673+0.09837327152490616j)
+After flip: (0.4416384994983673+0.09837279468774796j)
+Actually changed: True
+Weight in module after injection: (0.4416384994983673+0.09837279468774796j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.160129e-12 ± 1.158682e-12
+
+Layer 2/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+Before flip: (-0.12912847101688385+0.2941659092903137j)
+After flip: (-0.12912845611572266+0.2941659092903137j)
+Actually changed: True
+Weight in module after injection: (-0.12912845611572266+0.2941659092903137j)
+Still corrupted: True
+Before flip: (0.3410854637622833-0.4555739760398865j)
+After flip: (0.3410855829715729-0.4555739760398865j)
+Actually changed: True
+Weight in module after injection: (0.3410855829715729-0.4555739760398865j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.899833e-13 ± 1.670454e-13
+
+Layer 3/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+Before flip: (0.03929311782121658-0.42021358013153076j)
+After flip: (0.03929311782121658-0.4202173948287964j)
+Actually changed: True
+Weight in module after injection: (0.03929311782121658-0.4202173948287964j)
+Still corrupted: True
+Before flip: (-0.19477654993534088+0.11021190136671066j)
+After flip: (-0.19477654993534088+0.11021188646554947j)
+Actually changed: True
+Weight in module after injection: (-0.19477654993534088+0.11021188646554947j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.852980e-12 ± 1.852980e-12
+
+Layer 4/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+Before flip: (-0.3246079683303833+0.23833207786083221j)
+After flip: (-0.3246084451675415+0.23833207786083221j)
+Actually changed: True
+Weight in module after injection: (-0.3246084451675415+0.23833207786083221j)
+Still corrupted: True
+Before flip: (0.31607770919799805-0.11209365725517273j)
+After flip: (0.3160777688026428-0.11209365725517273j)
+Actually changed: True
+Weight in module after injection: (0.3160777688026428-0.11209365725517273j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.291304e-12 ± 1.286813e-12
+
+Layer 5/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+Before flip: (-0.3361843526363373+0.002090173540636897j)
+After flip: (-0.3361843526363373+0.002090171677991748j)
+Actually changed: True
+Weight in module after injection: (-0.3361843526363373+0.002090171677991748j)
+Still corrupted: True
+Before flip: (0.1579972207546234+0.11183502525091171j)
+After flip: (0.1579972207546234+0.11183501780033112j)
+Actually changed: True
+Weight in module after injection: (0.1579972207546234+0.11183501780033112j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.298775e-15 ± 4.298775e-15
+
+Layer 6/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+Before flip: (0.029360847547650337-0.09195183962583542j)
+After flip: (0.029360877349972725-0.09195183962583542j)
+Actually changed: True
+Weight in module after injection: (0.029360877349972725-0.09195183962583542j)
+Still corrupted: True
+Before flip: (0.2652883529663086-0.1373918056488037j)
+After flip: (0.26528453826904297-0.1373918056488037j)
+Actually changed: True
+Weight in module after injection: (0.26528453826904297-0.1373918056488037j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.551115e-18 ± 5.551115e-18
+
+Layer 7/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+Before flip: (-0.18040035665035248+0.14024440944194794j)
+After flip: (-0.18040035665035248+0.14024417102336884j)
+Actually changed: True
+Weight in module after injection: (-0.18040035665035248+0.14024417102336884j)
+Still corrupted: True
+Before flip: (-0.13427552580833435-0.04149241000413895j)
+After flip: (-0.13427552580833435-0.041492290794849396j)
+Actually changed: True
+Weight in module after injection: (-0.13427552580833435-0.041492290794849396j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 8/24: fno_blocks.fno_skips.0.conv
+  Type: real
+Before flip: 0.0009774930076673627
+After flip: 0.0009775079088285565
+Actually changed: True
+Weight in module after injection: 0.0009775079088285565
+Still corrupted: True
+Before flip: 0.1408105045557022
+After flip: 0.14081048965454102
+Actually changed: True
+Weight in module after injection: 0.14081048965454102
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.913918e-12 ± 5.248216e-12
+
+Layer 9/24: fno_blocks.fno_skips.1.conv
+  Type: real
+Before flip: 0.016579704359173775
+After flip: 0.016579708084464073
+Actually changed: True
+Weight in module after injection: 0.016579708084464073
+Still corrupted: True
+Before flip: -0.050754137337207794
+After flip: -0.050754256546497345
+Actually changed: True
+Weight in module after injection: -0.050754256546497345
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.011539e-11 ± 5.183972e-12
+
+Layer 10/24: fno_blocks.fno_skips.2.conv
+  Type: real
+Before flip: -0.17975804209709167
+After flip: -0.17975805699825287
+Actually changed: True
+Weight in module after injection: -0.17975805699825287
+Still corrupted: True
+Before flip: -0.023462578654289246
+After flip: -0.02346263825893402
+Actually changed: True
+Weight in module after injection: -0.02346263825893402
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.607075e-12 ± 9.835280e-14
+
+Layer 11/24: fno_blocks.fno_skips.3.conv
+  Type: real
+Before flip: -0.05559178814291954
+After flip: -0.05559166893362999
+Actually changed: True
+Weight in module after injection: -0.05559166893362999
+Still corrupted: True
+Before flip: 0.12254151701927185
+After flip: 0.12254148721694946
+Actually changed: True
+Weight in module after injection: 0.12254148721694946
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.117651e-16 ± 5.117651e-16
+
+Layer 12/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+Before flip: -0.428331196308136
+After flip: -0.4283302426338196
+Actually changed: True
+Weight in module after injection: -0.4283302426338196
+Still corrupted: True
+Before flip: -0.06638507544994354
+After flip: -0.06638483703136444
+Actually changed: True
+Weight in module after injection: -0.06638483703136444
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 7.042541e-12 ± 5.847950e-12
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+Before flip: -0.3270128071308136
+After flip: -0.3270127773284912
+Actually changed: True
+Weight in module after injection: -0.3270127773284912
+Still corrupted: True
+Before flip: 0.28069522976875305
+After flip: 0.28069499135017395
+Actually changed: True
+Weight in module after injection: 0.28069499135017395
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.228327e-11 ± 1.470383e-12
+
+Layer 14/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+Before flip: -0.10572315752506256
+After flip: -0.10572268068790436
+Actually changed: True
+Weight in module after injection: -0.10572268068790436
+Still corrupted: True
+Before flip: -0.03018454648554325
+After flip: -0.03018430806696415
+Actually changed: True
+Weight in module after injection: -0.03018430806696415
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.498134e-11 ± 1.935264e-14
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+Before flip: 0.11086586117744446
+After flip: 0.11086583137512207
+Actually changed: True
+Weight in module after injection: 0.11086583137512207
+Still corrupted: True
+Before flip: 0.07763691991567612
+After flip: 0.07763787358999252
+Actually changed: True
+Weight in module after injection: 0.07763787358999252
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.516831e-12 ± 4.701210e-13
+
+Layer 16/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+Before flip: 0.24259459972381592
+After flip: 0.24259448051452637
+Actually changed: True
+Weight in module after injection: 0.24259448051452637
+Still corrupted: True
+Before flip: 0.013632521033287048
+After flip: 0.013632401823997498
+Actually changed: True
+Weight in module after injection: 0.013632401823997498
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.363774e-12 ± 1.461130e-13
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+Before flip: -0.1143995001912117
+After flip: -0.1143995150923729
+Actually changed: True
+Weight in module after injection: -0.1143995150923729
+Still corrupted: True
+Before flip: -0.049207743257284164
+After flip: -0.049207981675863266
+Actually changed: True
+Weight in module after injection: -0.049207981675863266
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.874863e-12 ± 1.221233e-12
+
+Layer 18/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+Before flip: -0.09765498340129852
+After flip: -0.09765486419200897
+Actually changed: True
+Weight in module after injection: -0.09765486419200897
+Still corrupted: True
+Before flip: -0.09230142086744308
+After flip: -0.09230165928602219
+Actually changed: True
+Weight in module after injection: -0.09230165928602219
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.408812e-15 ± 1.155803e-15
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+Before flip: 0.023505322635173798
+After flip: 0.02350544184446335
+Actually changed: True
+Weight in module after injection: 0.02350544184446335
+Still corrupted: True
+Before flip: 0.11829762905836105
+After flip: 0.11829768866300583
+Actually changed: True
+Weight in module after injection: 0.11829768866300583
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 20/24: lifting.fcs.0
+  Type: real
+Before flip: 0.4842306971549988
+After flip: 0.4842309355735779
+Actually changed: True
+Weight in module after injection: 0.4842309355735779
+Still corrupted: True
+Before flip: -0.5315038561820984
+After flip: -0.5315043330192566
+Actually changed: True
+Weight in module after injection: -0.5315043330192566
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 21/24: lifting.fcs.1
+  Type: real
+Before flip: -0.020619286224246025
+After flip: -0.020619282498955727
+Actually changed: True
+Weight in module after injection: -0.020619282498955727
+Still corrupted: True
+Before flip: 0.09585665166378021
+After flip: 0.09585659205913544
+Actually changed: True
+Weight in module after injection: 0.09585659205913544
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 22/24: projection.fcs.0
+  Type: real
+Before flip: 0.16588419675827026
+After flip: 0.16588421165943146
+Actually changed: True
+Weight in module after injection: 0.16588421165943146
+Still corrupted: True
+Before flip: 0.043730005621910095
+After flip: 0.04373001307249069
+Actually changed: True
+Weight in module after injection: 0.04373001307249069
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 23/24: projection.fcs.1
+  Type: real
+Before flip: 0.002292666584253311
+After flip: 0.0022926675155758858
+Actually changed: True
+Weight in module after injection: 0.0022926675155758858
+Still corrupted: True
+Before flip: 0.0016643527196720243
+After flip: 0.0016643517883494496
+Actually changed: True
+Weight in module after injection: 0.0016643517883494496
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.174733e-17 ± 6.879263e-18
+
+============================================================
+Processing Quadrant: Q2 (bits 8-15)
+============================================================
+
+Layer 0/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+Before flip: (-0.09661664068698883+0.13002723455429077j)
+After flip: (-0.09658612310886383+0.13002723455429077j)
+Actually changed: True
+Weight in module after injection: (-0.09658612310886383+0.13002723455429077j)
+Still corrupted: True
+Before flip: (0.1060776486992836+0.12321293354034424j)
+After flip: (0.10607383400201797+0.12321293354034424j)
+Actually changed: True
+Weight in module after injection: (0.10607383400201797+0.12321293354034424j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.675124e-11 ± 2.065331e-12
+
+Layer 1/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+Before flip: (-0.14972735941410065+0.02922951802611351j)
+After flip: (-0.14972735941410065+0.02921425923705101j)
+Actually changed: True
+Weight in module after injection: (-0.14972735941410065+0.02921425923705101j)
+Still corrupted: True
+Before flip: (0.14067257940769196+0.19439032673835754j)
+After flip: (0.14067257940769196+0.19435980916023254j)
+Actually changed: True
+Weight in module after injection: (0.14067257940769196+0.19435980916023254j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.084816e-11 ± 2.653221e-13
+
+Layer 2/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+Before flip: (0.42504072189331055+0.158823162317276j)
+After flip: (0.4250483512878418+0.158823162317276j)
+Actually changed: True
+Weight in module after injection: (0.4250483512878418+0.158823162317276j)
+Still corrupted: True
+Before flip: (-0.27020731568336487+0.05314374715089798j)
+After flip: (-0.27008524537086487+0.05314374715089798j)
+Actually changed: True
+Weight in module after injection: (-0.27008524537086487+0.05314374715089798j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 9.531660e-12 ± 3.380182e-12
+
+Layer 3/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+Before flip: (-0.47652244567871094-0.08056361228227615j)
+After flip: (-0.47652244567871094-0.08055979758501053j)
+Actually changed: True
+Weight in module after injection: (-0.47652244567871094-0.08055979758501053j)
+Still corrupted: True
+Before flip: (-0.2930799126625061-0.013605345971882343j)
+After flip: (-0.2930799126625061-0.013590087182819843j)
+Actually changed: True
+Weight in module after injection: (-0.2930799126625061-0.013590087182819843j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.015055e-11 ± 2.369769e-12
+
+Layer 4/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+Before flip: (0.4784596264362335-0.38584446907043457j)
+After flip: (0.478474885225296-0.38584446907043457j)
+Actually changed: True
+Weight in module after injection: (0.478474885225296-0.38584446907043457j)
+Still corrupted: True
+Before flip: (-0.03725579008460045-0.022214705124497414j)
+After flip: (-0.03713371977210045-0.022214705124497414j)
+Actually changed: True
+Weight in module after injection: (-0.03713371977210045-0.022214705124497414j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.364397e-11 ± 1.637468e-12
+
+Layer 5/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+Before flip: (-0.2015140950679779-0.0007977777859196067j)
+After flip: (-0.2015140950679779-0.0007980162044987082j)
+Actually changed: True
+Weight in module after injection: (-0.2015140950679779-0.0007980162044987082j)
+Still corrupted: True
+Before flip: (0.016132444143295288-0.21722792088985443j)
+After flip: (0.016132444143295288-0.21771620213985443j)
+Actually changed: True
+Weight in module after injection: (0.016132444143295288-0.21771620213985443j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.862277e-12 ± 1.982126e-12
+
+Layer 6/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+Before flip: (0.005809547379612923+0.18903090059757233j)
+After flip: (0.005801917985081673+0.18903090059757233j)
+Actually changed: True
+Weight in module after injection: (0.005801917985081673+0.18903090059757233j)
+Still corrupted: True
+Before flip: (-0.04470321536064148+0.061291493475437164j)
+After flip: (-0.04468795657157898+0.061291493475437164j)
+Actually changed: True
+Weight in module after injection: (-0.04468795657157898+0.061291493475437164j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.844596e-15 ± 3.629150e-15
+
+Layer 7/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+Before flip: (0.06934203952550888-0.4088062644004822j)
+After flip: (0.06934203952550888-0.4087986350059509j)
+Actually changed: True
+Weight in module after injection: (0.06934203952550888-0.4087986350059509j)
+Still corrupted: True
+Before flip: (-0.10097312927246094+0.007155347615480423j)
+After flip: (-0.10097312927246094+0.00715487077832222j)
+Actually changed: True
+Weight in module after injection: (-0.10097312927246094+0.00715487077832222j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.021786e-14 ± 4.910760e-14
+
+Layer 8/24: fno_blocks.fno_skips.0.conv
+  Type: real
+Before flip: -0.19457478821277618
+After flip: -0.19456715881824493
+Actually changed: True
+Weight in module after injection: -0.19456715881824493
+Still corrupted: True
+Before flip: 0.17622311413288116
+After flip: 0.17610104382038116
+Actually changed: True
+Weight in module after injection: 0.17610104382038116
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.695210e-11 ± 2.280179e-11
+
+Layer 9/24: fno_blocks.fno_skips.1.conv
+  Type: real
+Before flip: -0.08627844601869583
+After flip: -0.08621741086244583
+Actually changed: True
+Weight in module after injection: -0.08621741086244583
+Still corrupted: True
+Before flip: -0.02810727059841156
+After flip: -0.02811489999294281
+Actually changed: True
+Weight in module after injection: -0.02811489999294281
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.675740e-11 ± 3.651447e-11
+
+Layer 10/24: fno_blocks.fno_skips.2.conv
+  Type: real
+Before flip: 0.22669462859630585
+After flip: 0.22672514617443085
+Actually changed: True
+Weight in module after injection: 0.22672514617443085
+Still corrupted: True
+Before flip: 0.08175414800643921
+After flip: 0.08175605535507202
+Actually changed: True
+Weight in module after injection: 0.08175605535507202
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 7.303266e-12 ± 1.658029e-12
+
+Layer 11/24: fno_blocks.fno_skips.3.conv
+  Type: real
+Before flip: -0.1366996467113495
+After flip: -0.1366386115550995
+Actually changed: True
+Weight in module after injection: -0.1366386115550995
+Still corrupted: True
+Before flip: 0.0991310179233551
+After flip: 0.09913483262062073
+Actually changed: True
+Weight in module after injection: 0.09913483262062073
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.850057e-11 ± 1.839537e-11
+
+Layer 12/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+Before flip: -0.07187601178884506
+After flip: -0.07187219709157944
+Actually changed: True
+Weight in module after injection: -0.07187219709157944
+Still corrupted: True
+Before flip: -0.031949274241924286
+After flip: -0.031827203929424286
+Actually changed: True
+Weight in module after injection: -0.031827203929424286
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.564859e-10 ± 1.524118e-10
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+Before flip: 0.2749989628791809
+After flip: 0.2752431035041809
+Actually changed: True
+Weight in module after injection: 0.2752431035041809
+Still corrupted: True
+Before flip: 0.1445341557264328
+After flip: 0.14454178512096405
+Actually changed: True
+Weight in module after injection: 0.14454178512096405
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.323807e-10 ± 3.126950e-10
+
+Layer 14/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+Before flip: 0.13872815668582916
+After flip: 0.13878919184207916
+Actually changed: True
+Weight in module after injection: 0.13878919184207916
+Still corrupted: True
+Before flip: -0.040441930294036865
+After flip: -0.040319859981536865
+Actually changed: True
+Weight in module after injection: -0.040319859981536865
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.834342e-10 ± 2.275271e-11
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+Before flip: -0.338600754737854
+After flip: -0.3386160135269165
+Actually changed: True
+Weight in module after injection: -0.3386160135269165
+Still corrupted: True
+Before flip: 0.08182690292596817
+After flip: 0.08188793808221817
+Actually changed: True
+Weight in module after injection: 0.08188793808221817
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.076147e-10 ± 1.771105e-10
+
+Layer 16/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+Before flip: 0.1458679735660553
+After flip: 0.1458069384098053
+Actually changed: True
+Weight in module after injection: 0.1458069384098053
+Still corrupted: True
+Before flip: -0.11264783889055252
+After flip: -0.11276990920305252
+Actually changed: True
+Weight in module after injection: -0.11276990920305252
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.499815e-10 ± 6.573657e-11
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+Before flip: 0.20275835692882538
+After flip: 0.20227007567882538
+Actually changed: True
+Weight in module after injection: 0.20227007567882538
+Still corrupted: True
+Before flip: 0.19424660503864288
+After flip: 0.19426186382770538
+Actually changed: True
+Weight in module after injection: 0.19426186382770538
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.248650e-10 ± 9.954270e-11
+
+Layer 18/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+Before flip: 0.05059646815061569
+After flip: 0.05058883875608444
+Actually changed: True
+Weight in module after injection: 0.05058883875608444
+Still corrupted: True
+Before flip: -0.05303148180246353
+After flip: -0.05300096422433853
+Actually changed: True
+Weight in module after injection: -0.05300096422433853
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.484900e-11 ± 5.134296e-11
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+Before flip: 0.14139652252197266
+After flip: 0.14151859283447266
+Actually changed: True
+Weight in module after injection: 0.14151859283447266
+Still corrupted: True
+Before flip: 0.22915981709957123
+After flip: 0.22903774678707123
+Actually changed: True
+Weight in module after injection: 0.22903774678707123
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.896606e-11 ± 1.892257e-11
+
+Layer 20/24: lifting.fcs.0
+  Type: real
+Before flip: 0.4214532673358917
+After flip: 0.421460896730423
+Actually changed: True
+Weight in module after injection: 0.421460896730423
+Still corrupted: True
+Before flip: 0.46365082263946533
+After flip: 0.46462738513946533
+Actually changed: True
+Weight in module after injection: 0.46462738513946533
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.571441e-09 ± 6.533350e-09
+
+Layer 21/24: lifting.fcs.1
+  Type: real
+Before flip: -0.014546914957463741
+After flip: -0.014545961283147335
+Actually changed: True
+Weight in module after injection: -0.014545961283147335
+Still corrupted: True
+Before flip: -0.13533823192119598
+After flip: -0.13546030223369598
+Actually changed: True
+Weight in module after injection: -0.13546030223369598
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.945454e-11 ± 6.945454e-11
+
+Layer 22/24: projection.fcs.0
+  Type: real
+Before flip: -0.0626288577914238
+After flip: -0.06262504309415817
+Actually changed: True
+Weight in module after injection: -0.06262504309415817
+Still corrupted: True
+Before flip: 0.030797438696026802
+After flip: 0.030766921117901802
+Actually changed: True
+Weight in module after injection: 0.030766921117901802
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.016711e-16 ± 1.016711e-16
+
+Layer 23/24: projection.fcs.1
+  Type: real
+Before flip: -0.040473517030477524
+After flip: -0.040481146425008774
+Actually changed: True
+Weight in module after injection: -0.040481146425008774
+Still corrupted: True
+Before flip: 0.06772467494010925
+After flip: 0.06769415736198425
+Actually changed: True
+Weight in module after injection: 0.06769415736198425
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.077487e-11 ± 1.967833e-11
+
+============================================================
+Processing Quadrant: Q3 (bits 16-23)
+============================================================
+
+Layer 0/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+Before flip: (0.31062382459640503+0.2661511301994324j)
+After flip: (0.30281132459640503+0.2661511301994324j)
+Actually changed: True
+Weight in module after injection: (0.30281132459640503+0.2661511301994324j)
+Still corrupted: True
+Before flip: (0.1887938678264618-0.26522621512413025j)
+After flip: (0.1927001178264618-0.26522621512413025j)
+Actually changed: True
+Weight in module after injection: (0.1927001178264618-0.26522621512413025j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.045752e-11 ± 5.457859e-11
+
+Layer 1/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+Before flip: (-1.1073102951049805-0.31851592659950256j)
+After flip: (-1.1073102951049805-0.25601592659950256j)
+Actually changed: True
+Weight in module after injection: (-1.1073102951049805-0.25601592659950256j)
+Still corrupted: True
+Before flip: (-0.5200782418251038+0.37032708525657654j)
+After flip: (-0.5200782418251038+0.30782708525657654j)
+Actually changed: True
+Weight in module after injection: (-0.5200782418251038+0.30782708525657654j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 7.409365e-10 ± 2.999552e-10
+
+Layer 2/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+Before flip: (0.19965101778507233-0.03446560725569725j)
+After flip: (0.19574476778507233-0.03446560725569725j)
+Actually changed: True
+Weight in module after injection: (0.19574476778507233-0.03446560725569725j)
+Still corrupted: True
+Before flip: (0.16538827121257782+0.2053581029176712j)
+After flip: (0.13413827121257782+0.2053581029176712j)
+Actually changed: True
+Weight in module after injection: (0.13413827121257782+0.2053581029176712j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.438435e-10 ± 2.196600e-10
+
+Layer 3/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+Before flip: (0.32616525888442993+0.018548939377069473j)
+After flip: (0.32616525888442993+0.018304798752069473j)
+Actually changed: True
+Weight in module after injection: (0.32616525888442993+0.018304798752069473j)
+Still corrupted: True
+Before flip: (0.0852484330534935+0.14211207628250122j)
+After flip: (0.0852484330534935+0.14406520128250122j)
+Actually changed: True
+Weight in module after injection: (0.0852484330534935+0.14406520128250122j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.565785e-11 ± 6.655588e-12
+
+Layer 4/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+Before flip: (0.1893409788608551+0.6825944781303406j)
+After flip: (0.1883644163608551+0.6825944781303406j)
+Actually changed: True
+Weight in module after injection: (0.1883644163608551+0.6825944781303406j)
+Still corrupted: True
+Before flip: (-0.5637036561965942+0.009537666104733944j)
+After flip: (-0.5012036561965942+0.009537666104733944j)
+Actually changed: True
+Weight in module after injection: (-0.5012036561965942+0.009537666104733944j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.950430e-10 ± 1.908415e-10
+
+Layer 5/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+Before flip: (-0.4030987024307251-0.18971002101898193j)
+After flip: (-0.4030987024307251-0.19752252101898193j)
+Actually changed: True
+Weight in module after injection: (-0.4030987024307251-0.19752252101898193j)
+Still corrupted: True
+Before flip: (-0.2820477783679962-0.0576971061527729j)
+After flip: (-0.2820477783679962-0.0579412467777729j)
+Actually changed: True
+Weight in module after injection: (-0.2820477783679962-0.0579412467777729j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.283806e-11 ± 4.494811e-11
+
+Layer 6/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+Before flip: (0.05800745263695717+0.009017720818519592j)
+After flip: (0.05703089013695717+0.009017720818519592j)
+Actually changed: True
+Weight in module after injection: (0.05703089013695717+0.009017720818519592j)
+Still corrupted: True
+Before flip: (0.4131237268447876+0.28621190786361694j)
+After flip: (0.3818737268447876+0.28621190786361694j)
+Actually changed: True
+Weight in module after injection: (0.3818737268447876+0.28621190786361694j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.240458e-10 ± 1.105044e-10
+
+Layer 7/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+Before flip: (0.06995358318090439+0.10588140040636063j)
+After flip: (0.06995358318090439+0.10197515040636063j)
+Actually changed: True
+Weight in module after injection: (0.06995358318090439+0.10197515040636063j)
+Still corrupted: True
+Before flip: (0.2583099901676178-0.030989516526460648j)
+After flip: (0.2583099901676178-0.029036391526460648j)
+Actually changed: True
+Weight in module after injection: (0.2583099901676178-0.029036391526460648j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.646472e-11 ± 6.008718e-13
+
+Layer 8/24: fno_blocks.fno_skips.0.conv
+  Type: real
+Before flip: -0.3140734136104584
+After flip: -0.3179796636104584
+Actually changed: True
+Weight in module after injection: -0.3179796636104584
+Still corrupted: True
+Before flip: -0.14082594215869904
+After flip: -0.14180250465869904
+Actually changed: True
+Weight in module after injection: -0.14180250465869904
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.798563e-09 ± 1.679689e-09
+
+Layer 9/24: fno_blocks.fno_skips.1.conv
+  Type: real
+Before flip: 0.05839964374899864
+After flip: 0.05058714374899864
+Actually changed: True
+Weight in module after injection: 0.05058714374899864
+Still corrupted: True
+Before flip: 0.046760112047195435
+After flip: 0.046271830797195435
+Actually changed: True
+Weight in module after injection: 0.046271830797195435
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.870213e-09 ± 2.729004e-09
+
+Layer 10/24: fno_blocks.fno_skips.2.conv
+  Type: real
+Before flip: -0.14189286530017853
+After flip: -0.14384599030017853
+Actually changed: True
+Weight in module after injection: -0.14384599030017853
+Still corrupted: True
+Before flip: -0.12983816862106323
+After flip: -0.13179129362106323
+Actually changed: True
+Weight in module after injection: -0.13179129362106323
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.782654e-10 ± 2.308971e-10
+
+Layer 11/24: fno_blocks.fno_skips.3.conv
+  Type: real
+Before flip: -0.026748403906822205
+After flip: -0.030654653906822205
+Actually changed: True
+Weight in module after injection: -0.030654653906822205
+Still corrupted: True
+Before flip: -0.07168217748403549
+After flip: -0.035841088742017746
+Actually changed: True
+Weight in module after injection: -0.035841088742017746
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.196322e-07 ± 5.180076e-07
+
+Layer 12/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+Before flip: 0.1269225925207138
+After flip: 0.1259460300207138
+Actually changed: True
+Weight in module after injection: 0.1259460300207138
+Still corrupted: True
+Before flip: -0.31550124287605286
+After flip: -0.44050124287605286
+Actually changed: True
+Weight in module after injection: -0.44050124287605286
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.267733e-07 ± 8.247446e-07
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+Before flip: -0.3369075357913971
+After flip: -0.3290950357913971
+Actually changed: True
+Weight in module after injection: -0.3290950357913971
+Still corrupted: True
+Before flip: -0.1466602087020874
+After flip: -0.1544727087020874
+Actually changed: True
+Weight in module after injection: -0.1544727087020874
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.214595e-08 ± 3.716437e-09
+
+Layer 14/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+Before flip: 0.03825351223349571
+After flip: 0.04606601223349571
+Actually changed: True
+Weight in module after injection: 0.04606601223349571
+Still corrupted: True
+Before flip: 0.16800515353679657
+After flip: 0.18363015353679657
+Actually changed: True
+Weight in module after injection: 0.18363015353679657
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.911787e-07 ± 2.155380e-07
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+Before flip: -0.05866983160376549
+After flip: -0.05085733160376549
+Actually changed: True
+Weight in module after injection: -0.05085733160376549
+Still corrupted: True
+Before flip: 0.09159361571073532
+After flip: 0.09061705321073532
+Actually changed: True
+Weight in module after injection: 0.09061705321073532
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.290544e-08 ± 9.166884e-09
+
+Layer 16/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+Before flip: -0.20784205198287964
+After flip: -0.20979517698287964
+Actually changed: True
+Weight in module after injection: -0.20979517698287964
+Still corrupted: True
+Before flip: -0.05976540595293045
+After flip: -0.06000954657793045
+Actually changed: True
+Weight in module after injection: -0.06000954657793045
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.973975e-09 ± 1.675656e-09
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+Before flip: 0.01748577691614628
+After flip: 0.00874288845807314
+Actually changed: True
+Weight in module after injection: 0.00874288845807314
+Still corrupted: True
+Before flip: -0.0540238656103611
+After flip: -0.0545121468603611
+Actually changed: True
+Weight in module after injection: -0.0545121468603611
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.324807e-08 ± 1.304859e-08
+
+Layer 18/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+Before flip: 0.01234101690351963
+After flip: 0.01221894659101963
+Actually changed: True
+Weight in module after injection: 0.01221894659101963
+Still corrupted: True
+Before flip: -0.028680134564638138
+After flip: -0.028802204877138138
+Actually changed: True
+Weight in module after injection: -0.028802204877138138
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.370126e-10 ± 1.321518e-11
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+Before flip: 0.17612600326538086
+After flip: 0.23862600326538086
+Actually changed: True
+Weight in module after injection: 0.23862600326538086
+Still corrupted: True
+Before flip: 0.004360949620604515
+After flip: 0.006314074620604515
+Actually changed: True
+Weight in module after injection: 0.006314074620604515
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.614791e-08 ± 1.451942e-08
+
+Layer 20/24: lifting.fcs.0
+  Type: real
+Before flip: -0.5315038561820984
+After flip: -0.5393163561820984
+Actually changed: True
+Weight in module after injection: -0.5393163561820984
+Still corrupted: True
+Before flip: 0.24134241044521332
+After flip: 0.48268482089042664
+Actually changed: True
+Weight in module after injection: 0.48268482089042664
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.309066e-05 ± 6.308360e-05
+
+Layer 21/24: lifting.fcs.1
+  Type: real
+Before flip: -0.033600013703107834
+After flip: -0.034088294953107834
+Actually changed: True
+Weight in module after injection: -0.034088294953107834
+Still corrupted: True
+Before flip: -0.0008068505558185279
+After flip: -0.0007458153995685279
+Actually changed: True
+Weight in module after injection: -0.0007458153995685279
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.001004e-10 ± 2.089375e-10
+
+Layer 22/24: projection.fcs.0
+  Type: real
+Before flip: -0.08195803314447403
+After flip: -0.11320803314447403
+Actually changed: True
+Weight in module after injection: -0.11320803314447403
+Still corrupted: True
+Before flip: -0.015539390034973621
+After flip: -0.031078780069947243
+Actually changed: True
+Weight in module after injection: -0.031078780069947243
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.337965e-08 ± 1.075128e-08
+
+Layer 23/24: projection.fcs.1
+  Type: real
+Before flip: 0.02081357128918171
+After flip: 0.01690732128918171
+Actually changed: True
+Weight in module after injection: 0.01690732128918171
+Still corrupted: True
+Before flip: -0.0010453021386638284
+After flip: -0.0011673724511638284
+Actually changed: True
+Weight in module after injection: -0.0011673724511638284
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.941615e-07 ± 1.938561e-07
+
+============================================================
+Processing Quadrant: Q4 (bits 24-31)
+============================================================
+
+Layer 0/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+Before flip: (-0.08893242478370667+0.48175954818725586j)
+After flip: (0.08893242478370667+0.48175954818725586j)
+Actually changed: True
+Weight in module after injection: (0.08893242478370667+0.48175954818725586j)
+Still corrupted: True
+Before flip: (-0.1493733525276184+0.13928155601024628j)
+After flip: (-0.5974934101104736+0.13928155601024628j)
+Actually changed: True
+Weight in module after injection: (-0.5974934101104736+0.13928155601024628j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.556946e-09 ± 5.840853e-10
+
+Layer 1/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+Before flip: (-0.34354257583618164-0.13094034790992737j)
+After flip: (-0.34354257583618164-0.0005114857340231538j)
+Actually changed: True
+Weight in module after injection: (-0.34354257583618164-0.0005114857340231538j)
+Still corrupted: True
+Before flip: (-0.3674815595149994+0.3838910162448883j)
+After flip: (-0.3674815595149994+0.001499574282206595j)
+Actually changed: True
+Weight in module after injection: (-0.3674815595149994+0.001499574282206595j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.344751e-09 ± 1.489302e-09
+
+Layer 2/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+Before flip: (-0.28596609830856323+0.004951357375830412j)
+After flip: (-0.0011170550715178251+0.004951357375830412j)
+Actually changed: True
+Weight in module after injection: (-0.0011170550715178251+0.004951357375830412j)
+Still corrupted: True
+Before flip: (0.09250316023826599-0.18102292716503143j)
+After flip: (0.023125790059566498-0.18102292716503143j)
+Actually changed: True
+Weight in module after injection: (0.023125790059566498-0.18102292716503143j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.874781e-09 ± 8.004485e-10
+
+Layer 3/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+Before flip: (0.19513985514640808+0.173435777425766j)
+After flip: (0.19513985514640808-0.173435777425766j)
+Actually changed: True
+Weight in module after injection: (0.19513985514640808-0.173435777425766j)
+Still corrupted: True
+Before flip: (0.5152144432067871+0.02452787011861801j)
+After flip: (0.5152144432067871+0.09811148047447205j)
+Actually changed: True
+Weight in module after injection: (0.5152144432067871+0.09811148047447205j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.928774e-09 ± 3.422304e-10
+
+Layer 4/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+Before flip: (0.3343906104564667-0.3313135504722595j)
+After flip: (0.001306213322095573-0.3313135504722595j)
+Actually changed: True
+Weight in module after injection: (0.001306213322095573-0.3313135504722595j)
+Still corrupted: True
+Before flip: (0.6122145652770996+0.3780786395072937j)
+After flip: (-0.6122145652770996+0.3780786395072937j)
+Actually changed: True
+Weight in module after injection: (-0.6122145652770996+0.3780786395072937j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.982467e-09 ± 2.027583e-09
+
+Layer 5/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+Before flip: (-0.05429140478372574+0.09725522249937057j)
+After flip: (-0.05429140478372574+1.5560835599899292j)
+Actually changed: True
+Weight in module after injection: (-0.05429140478372574+1.5560835599899292j)
+Still corrupted: True
+Before flip: (0.305939644575119-0.3228490352630615j)
+After flip: (0.305939644575119-0.020178064703941345j)
+Actually changed: True
+Weight in module after injection: (0.305939644575119-0.020178064703941345j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.054274e-09 ± 3.788384e-09
+
+Layer 6/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+Before flip: (0.38177424669265747-0.19461539387702942j)
+After flip: (8.888874358792265e-11-0.19461539387702942j)
+Actually changed: True
+Weight in module after injection: (8.888874358792265e-11-0.19461539387702942j)
+Still corrupted: True
+Before flip: (0.47523489594459534+0.2689453363418579j)
+After flip: (-0.47523489594459534+0.2689453363418579j)
+Actually changed: True
+Weight in module after injection: (-0.47523489594459534+0.2689453363418579j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.307421e-09 ± 1.896215e-11
+
+Layer 7/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+Before flip: (-0.052569784224033356+0.10254202783107758j)
+After flip: (-0.052569784224033356+0.0004005547962151468j)
+Actually changed: True
+Weight in module after injection: (-0.052569784224033356+0.0004005547962151468j)
+Still corrupted: True
+Before flip: (-0.27584215998649597-0.043833136558532715j)
+After flip: (-0.27584215998649597-0.7013301849365234j)
+Actually changed: True
+Weight in module after injection: (-0.27584215998649597-0.7013301849365234j)
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.365839e-09 ± 1.675146e-09
+
+Layer 8/24: fno_blocks.fno_skips.0.conv
+  Type: real
+Before flip: -0.1119808480143547
+After flip: -2.6072572920088355e-11
+Actually changed: True
+Weight in module after injection: -2.6072572920088355e-11
+Still corrupted: True
+Before flip: 0.0957259088754654
+After flip: 2.228792497782628e-11
+Actually changed: True
+Weight in module after injection: 2.228792497782628e-11
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.064482e-07 ± 1.324784e-07
+
+Layer 9/24: fno_blocks.fno_skips.1.conv
+  Type: real
+Before flip: -0.18195301294326782
+After flip: -2.776382643787656e-06
+Actually changed: True
+Weight in module after injection: -2.776382643787656e-06
+Still corrupted: True
+Before flip: -0.1246674507856369
+After flip: -0.031166862696409225
+Actually changed: True
+Weight in module after injection: -0.031166862696409225
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.191945e-06 ± 3.903342e-07
+
+Layer 10/24: fno_blocks.fno_skips.2.conv
+  Type: real
+Before flip: 0.22669462859630585
+After flip: 0.9067785143852234
+Actually changed: True
+Weight in module after injection: 0.9067785143852234
+Still corrupted: True
+Before flip: -0.03315651789307594
+After flip: -0.0001295176480198279
+Actually changed: True
+Weight in module after injection: -0.0001295176480198279
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.281076e-06 ± 2.263219e-06
+
+Layer 11/24: fno_blocks.fno_skips.3.conv
+  Type: real
+Before flip: 0.0029749509412795305
+After flip: 0.0007437377353198826
+Actually changed: True
+Weight in module after injection: 0.0007437377353198826
+Still corrupted: True
+Before flip: -0.07621262222528458
+After flip: -1.7744633887262218e-11
+Actually changed: True
+Weight in module after injection: -1.7744633887262218e-11
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.322716e-07 ± 2.312848e-07
+
+Layer 12/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+Before flip: -0.17705115675926208
+After flip: -9.597962439973178e-21
+Actually changed: True
+Weight in module after injection: -9.597962439973178e-21
+Still corrupted: True
+Before flip: 0.08925783634185791
+After flip: 1.4281253814697266
+Actually changed: True
+Weight in module after injection: 1.4281253814697266
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.739294e-04 ± 1.725284e-04
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+Before flip: -0.16041110455989838
+After flip: 0.16041110455989838
+Actually changed: True
+Weight in module after injection: 0.16041110455989838
+Still corrupted: True
+Before flip: -0.07451853901147842
+After flip: -1.1370626680218265e-06
+Actually changed: True
+Weight in module after injection: -1.1370626680218265e-06
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.587426e-06 ± 3.036997e-06
+
+Layer 14/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+Before flip: -0.38410255312919617
+After flip: -8.94308446741654e-11
+Actually changed: True
+Weight in module after injection: -8.94308446741654e-11
+Still corrupted: True
+Before flip: -0.15541860461235046
+After flip: -0.009713662788271904
+Actually changed: True
+Weight in module after injection: -0.009713662788271904
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.602036e-05 ± 2.060399e-05
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+Before flip: -0.27769607305526733
+After flip: -1.1107842922210693
+Actually changed: True
+Weight in module after injection: -1.1107842922210693
+Still corrupted: True
+Before flip: -0.19582845270633698
+After flip: -6.66369693973774e+37
+Actually changed: True
+Weight in module after injection: -6.66369693973774e+37
+Still corrupted: True
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 1.063947e-04 ± 0.000000e+00
+
+Layer 16/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+Before flip: 0.07094088196754456
+After flip: 3.845712917362478e-21
+Actually changed: True
+Weight in module after injection: 3.845712917362478e-21
+Still corrupted: True
+Before flip: -0.2592114210128784
+After flip: -0.0010125446133315563
+Actually changed: True
+Weight in module after injection: -0.0010125446133315563
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.184177e-05 ± 3.687061e-06
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+Before flip: 0.15612927079200745
+After flip: 0.6245170831680298
+Actually changed: True
+Weight in module after injection: 0.6245170831680298
+Still corrupted: True
+Before flip: 0.1058669164776802
+After flip: 5.739057041972116e-21
+Actually changed: True
+Weight in module after injection: 5.739057041972116e-21
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.226383e-04 ± 1.218686e-04
+
+Layer 18/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+Before flip: -0.02786755934357643
+After flip: -0.11147023737430573
+Actually changed: True
+Weight in module after injection: -0.11147023737430573
+Still corrupted: True
+Before flip: 0.0638413280248642
+After flip: 9.741413578012725e-07
+Actually changed: True
+Weight in module after injection: 9.741413578012725e-07
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.853823e-06 ± 1.771001e-06
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+Before flip: 0.05066948011517525
+After flip: 0.0001979276566999033
+Actually changed: True
+Weight in module after injection: 0.0001979276566999033
+Still corrupted: True
+Before flip: 0.14435194432735443
+After flip: 2.2026358692528447e-06
+Actually changed: True
+Weight in module after injection: 2.2026358692528447e-06
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.245314e-06 ± 7.749436e-06
+
+Layer 20/24: lifting.fcs.0
+  Type: real
+Before flip: -0.2432016283273697
+After flip: 0.2432016283273697
+Actually changed: True
+Weight in module after injection: 0.2432016283273697
+Still corrupted: True
+Before flip: -0.4080156683921814
+After flip: 0.4080156683921814
+Actually changed: True
+Weight in module after injection: 0.4080156683921814
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.533928e-04 ± 1.403724e-04
+
+Layer 21/24: lifting.fcs.1
+  Type: real
+Before flip: 0.16316233575344086
+After flip: 2.489659664206556e-06
+Actually changed: True
+Weight in module after injection: 2.489659664206556e-06
+Still corrupted: True
+Before flip: 0.22697483003139496
+After flip: 5.2846695769437346e-11
+Actually changed: True
+Weight in module after injection: 5.2846695769437346e-11
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.494792e-05 ± 1.328837e-05
+
+Layer 22/24: projection.fcs.0
+  Type: real
+Before flip: -0.05648939684033394
+After flip: 0.05648939684033394
+Actually changed: True
+Weight in module after injection: 0.05648939684033394
+Still corrupted: True
+Before flip: 0.13813482224941254
+After flip: 0.008633426390588284
+Actually changed: True
+Weight in module after injection: 0.008633426390588284
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.629706e-06 ± 5.578570e-06
+
+Layer 23/24: projection.fcs.1
+  Type: real
+Before flip: 0.0007684931042604148
+After flip: -0.0007684931042604148
+Actually changed: True
+Weight in module after injection: -0.0007684931042604148
+Still corrupted: True
+Before flip: -0.029568545520305634
+After flip: -6.884463485401504e-12
+Actually changed: True
+Weight in module after injection: -6.884463485401504e-12
+Still corrupted: True
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.903415e-06 ± 3.855574e-06
+
+Weight results saved to weight_quadrant_summary.csv
+
+Quadrant comparison plot saved to: plots/quadrant_comparison_weight.png
+Overall MSE plot saved to: plots/overall_mse_weight.png
+
+============================================================
+STARTING ACTIVATION FAULT INJECTION BY QUADRANT
+============================================================
+
+============================================================
+ACTIVATION FAULT INJECTION - BY BIT QUADRANT
+============================================================
+Note: All activations are real-valued (even after SpectralConv)
+
+Found 20 injectable layers
+
+Collecting baseline (fault-free) outputs...
+Collected 5 baseline outputs
+
+============================================================
+Processing Quadrant: Q1 (bits 0-7)
+============================================================
+
+Layer 0/20: fno_blocks.convs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.257427e-12 ± 3.469595e-12
+
+Layer 1/20: fno_blocks.convs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.485452e-12 ± 1.547187e-12
+
+Layer 2/20: fno_blocks.convs.2
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.626149e-12 ± 2.569054e-12
+
+Layer 3/20: fno_blocks.convs.3
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 4/20: fno_blocks.fno_skips.0.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.332981e-12 ± 6.223608e-12
+
+Layer 5/20: fno_blocks.fno_skips.1.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.691643e-12 ± 3.220119e-12
+
+Layer 6/20: fno_blocks.fno_skips.2.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.921708e-13 ± 8.860716e-14
+
+Layer 7/20: fno_blocks.fno_skips.3.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 8/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.781738e-12 ± 3.560559e-12
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.307412e-12 ± 6.112915e-13
+
+Layer 10/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.018843e-11 ± 4.546881e-12
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.356114e-12 ± 2.994780e-12
+
+Layer 12/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.337518e-12 ± 1.186894e-12
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.546415e-13 ± 5.794784e-14
+
+Layer 14/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 16/20: lifting.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.601714e-14 ± 3.601714e-14
+
+Layer 17/20: lifting.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.938585e-12 ± 9.492643e-13
+
+Layer 18/20: projection.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 19/20: projection.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.744030e-14 ± 6.054792e-15
+
+============================================================
+Processing Quadrant: Q2 (bits 8-15)
+============================================================
+
+Layer 0/20: fno_blocks.convs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.583437e-11 ± 7.174985e-12
+
+Layer 1/20: fno_blocks.convs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.885736e-11 ± 3.495293e-11
+
+Layer 2/20: fno_blocks.convs.2
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.840461e-12 ± 1.011158e-12
+
+Layer 3/20: fno_blocks.convs.3
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.567352e-13 ± 3.272591e-13
+
+Layer 4/20: fno_blocks.fno_skips.0.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.684474e-11 ± 1.754470e-12
+
+Layer 5/20: fno_blocks.fno_skips.1.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.910029e-11 ± 1.608162e-11
+
+Layer 6/20: fno_blocks.fno_skips.2.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.024827e-12 ± 7.743031e-12
+
+Layer 7/20: fno_blocks.fno_skips.3.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.679354e-15 ± 1.164861e-15
+
+Layer 8/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.081621e-11 ± 9.331272e-12
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.549069e-12 ± 1.487518e-12
+
+Layer 10/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.296766e-11 ± 1.426791e-11
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.763559e-12 ± 2.565559e-12
+
+Layer 12/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.414924e-12 ± 2.947879e-12
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.748255e-12 ± 1.655532e-12
+
+Layer 14/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.004535e-11 ± 9.224569e-12
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.317294e-13 ± 3.077680e-13
+
+Layer 16/20: lifting.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.634307e-11 ± 4.987472e-12
+
+Layer 17/20: lifting.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.133209e-10 ± 9.553740e-11
+
+Layer 18/20: projection.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.771684e-12 ± 4.758441e-12
+
+Layer 19/20: projection.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.964321e-10 ± 2.519030e-10
+
+============================================================
+Processing Quadrant: Q3 (bits 16-23)
+============================================================
+
+Layer 0/20: fno_blocks.convs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.354121e-09 ± 4.833916e-10
+
+Layer 1/20: fno_blocks.convs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 7.349742e-08 ± 6.854737e-08
+
+Layer 2/20: fno_blocks.convs.2
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.502331e-10 ± 5.556760e-10
+
+Layer 3/20: fno_blocks.convs.3
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 8.692105e-09 ± 5.304841e-09
+
+Layer 4/20: fno_blocks.fno_skips.0.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.138194e-09 ± 6.444107e-10
+
+Layer 5/20: fno_blocks.fno_skips.1.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.381333e-09 ± 5.285104e-09
+
+Layer 6/20: fno_blocks.fno_skips.2.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.367241e-09 ± 5.196446e-09
+
+Layer 7/20: fno_blocks.fno_skips.3.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.375231e-10 ± 2.202829e-10
+
+Layer 8/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.018081e-08 ± 7.707946e-09
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.780618e-09 ± 4.132013e-09
+
+Layer 10/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.807114e-09 ± 4.058682e-10
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.484058e-09 ± 3.480374e-09
+
+Layer 12/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.018367e-08 ± 1.558561e-08
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 4.127211e-10 ± 5.597096e-12
+
+Layer 14/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.484759e-09 ± 2.305351e-09
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.556988e-07 ± 1.546192e-07
+
+Layer 16/20: lifting.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.252456e-07 ± 5.145202e-08
+
+Layer 17/20: lifting.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 7.866763e-09 ± 3.728527e-09
+
+Layer 18/20: projection.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.630453e-09 ± 2.526450e-09
+
+Layer 19/20: projection.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.556659e-04 ± 2.868904e-06
+
+============================================================
+Processing Quadrant: Q4 (bits 24-31)
+============================================================
+
+Layer 0/20: fno_blocks.convs.0
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 1.052860e-07 ± 0.000000e+00
+
+Layer 1/20: fno_blocks.convs.1
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 4.450472e-08 ± 0.000000e+00
+
+Layer 2/20: fno_blocks.convs.2
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 2.947203e-08 ± 0.000000e+00
+
+Layer 3/20: fno_blocks.convs.3
+  Valid: 0/2, NaN Rate: 100.0%
+
+Layer 4/20: fno_blocks.fno_skips.0.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 7.039293e-09 ± 2.085643e-09
+
+Layer 5/20: fno_blocks.fno_skips.1.conv
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 1.042866e-08 ± 0.000000e+00
+
+Layer 6/20: fno_blocks.fno_skips.2.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.843821e-07 ± 3.690883e-07
+
+Layer 7/20: fno_blocks.fno_skips.3.conv
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 5.804636e-08 ± 3.631275e-08
+
+Layer 8/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 1.739836e-07 ± 0.000000e+00
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 2.516735e-07 ± 0.000000e+00
+
+Layer 10/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 2.447950e-07 ± 1.864303e-08
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 3.326171e-08 ± 1.414289e-08
+
+Layer 12/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 0/2, NaN Rate: 100.0%
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 6.725609e-07 ± 6.338668e-07
+
+Layer 14/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 9.167397e-08 ± 0.000000e+00
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 1.416604e-07 ± 0.000000e+00
+
+Layer 16/20: lifting.fcs.0
+  Valid: 1/2, NaN Rate: 50.0%
+  Mean MSE: 5.402280e-08 ± 0.000000e+00
+
+Layer 17/20: lifting.fcs.1
+  Valid: 0/2, NaN Rate: 100.0%
+
+Layer 18/20: projection.fcs.0
+  Valid: 2/2, NaN Rate: 0.0%
+  Mean MSE: 1.829937e-06 ± 1.821003e-06
+
+Layer 19/20: projection.fcs.1
+  Valid: 0/2, NaN Rate: 100.0%
+
+Activation results saved to activation_quadrant_summary.csv
+
+Quadrant comparison plot saved to: plots/quadrant_comparison_activation.png
+Overall MSE plot saved to: plots/overall_mse_activation.png
+
+============================================================
+QUADRANT ANALYSIS SUMMARY
+============================================================
+
+--- Weight Faults ---
+                         Layer  Q1 (bits 0-7)_MSE  Q1 (bits 0-7)_Std  Q1 (bits 0-7)_NaN%  Q2 (bits 8-15)_MSE  Q2 (bits 8-15)_Std  Q2 (bits 8-15)_NaN%  Q3 (bits 16-23)_MSE  Q3 (bits 16-23)_Std  Q3 (bits 16-23)_NaN%  Q4 (bits 24-31)_MSE  Q4 (bits 24-31)_Std  Q4 (bits 24-31)_NaN%
+     fno_blocks.convs.0 [Real]       8.018825e-12       7.987952e-12                 0.0        1.675124e-11        2.065331e-12                  0.0         6.045752e-11         5.457859e-11                   0.0         1.556946e-09         5.840853e-10                   0.0
+     fno_blocks.convs.0 [Imag]       1.160129e-12       1.158682e-12                 0.0        1.084816e-11        2.653221e-13                  0.0         7.409365e-10         2.999552e-10                   0.0         2.344751e-09         1.489302e-09                   0.0
+     fno_blocks.convs.1 [Real]       1.899833e-13       1.670454e-13                 0.0        9.531660e-12        3.380182e-12                  0.0         3.438435e-10         2.196600e-10                   0.0         1.874781e-09         8.004485e-10                   0.0
+     fno_blocks.convs.1 [Imag]       1.852980e-12       1.852980e-12                 0.0        1.015055e-11        2.369769e-12                  0.0         1.565785e-11         6.655588e-12                   0.0         1.928774e-09         3.422304e-10                   0.0
+     fno_blocks.convs.2 [Real]       1.291304e-12       1.286813e-12                 0.0        1.364397e-11        1.637468e-12                  0.0         1.950430e-10         1.908415e-10                   0.0         5.982467e-09         2.027583e-09                   0.0
+     fno_blocks.convs.2 [Imag]       4.298775e-15       4.298775e-15                 0.0        2.862277e-12        1.982126e-12                  0.0         5.283806e-11         4.494811e-11                   0.0         5.054274e-09         3.788384e-09                   0.0
+     fno_blocks.convs.3 [Real]       5.551115e-18       5.551115e-18                 0.0        8.844596e-15        3.629150e-15                  0.0         1.240458e-10         1.105044e-10                   0.0         2.307421e-09         1.896215e-11                   0.0
+     fno_blocks.convs.3 [Imag]       0.000000e+00       0.000000e+00                 0.0        5.021786e-14        4.910760e-14                  0.0         1.646472e-11         6.008718e-13                   0.0         3.365839e-09         1.675146e-09                   0.0
+   fno_blocks.fno_skips.0.conv       8.913918e-12       5.248216e-12                 0.0        2.695210e-11        2.280179e-11                  0.0         2.798563e-09         1.679689e-09                   0.0         2.064482e-07         1.324784e-07                   0.0
+   fno_blocks.fno_skips.1.conv       1.011539e-11       5.183972e-12                 0.0        4.675740e-11        3.651447e-11                  0.0         2.870213e-09         2.729004e-09                   0.0         2.191945e-06         3.903342e-07                   0.0
+   fno_blocks.fno_skips.2.conv       2.607075e-12       9.835280e-14                 0.0        7.303266e-12        1.658029e-12                  0.0         5.782654e-10         2.308971e-10                   0.0         2.281076e-06         2.263219e-06                   0.0
+   fno_blocks.fno_skips.3.conv       5.117651e-16       5.117651e-16                 0.0        1.850057e-11        1.839537e-11                  0.0         5.196322e-07         5.180076e-07                   0.0         2.322716e-07         2.312848e-07                   0.0
+fno_blocks.channel_mlp.0.fcs.0       7.042541e-12       5.847950e-12                 0.0        1.564859e-10        1.524118e-10                  0.0         8.267733e-07         8.247446e-07                   0.0         1.739294e-04         1.725284e-04                   0.0
+fno_blocks.channel_mlp.0.fcs.1       1.228327e-11       1.470383e-12                 0.0        3.323807e-10        3.126950e-10                  0.0         1.214595e-08         3.716437e-09                   0.0         3.587426e-06         3.036997e-06                   0.0
+fno_blocks.channel_mlp.1.fcs.0       1.498134e-11       1.935264e-14                 0.0        1.834342e-10        2.275271e-11                  0.0         2.911787e-07         2.155380e-07                   0.0         2.602036e-05         2.060399e-05                   0.0
+fno_blocks.channel_mlp.1.fcs.1       4.516831e-12       4.701210e-13                 0.0        2.076147e-10        1.771105e-10                  0.0         1.290544e-08         9.166884e-09                   0.0         1.063947e-04         0.000000e+00                  50.0
+fno_blocks.channel_mlp.2.fcs.0       5.363774e-12       1.461130e-13                 0.0        1.499815e-10        6.573657e-11                  0.0         1.973975e-09         1.675656e-09                   0.0         1.184177e-05         3.687061e-06                   0.0
+fno_blocks.channel_mlp.2.fcs.1       3.874863e-12       1.221233e-12                 0.0        1.248650e-10        9.954270e-11                  0.0         1.324807e-08         1.304859e-08                   0.0         1.226383e-04         1.218686e-04                   0.0
+fno_blocks.channel_mlp.3.fcs.0       1.408812e-15       1.155803e-15                 0.0        6.484900e-11        5.134296e-11                  0.0         2.370126e-10         1.321518e-11                   0.0         4.853823e-06         1.771001e-06                   0.0
+fno_blocks.channel_mlp.3.fcs.1       0.000000e+00       0.000000e+00                 0.0        1.896606e-11        1.892257e-11                  0.0         2.614791e-08         1.451942e-08                   0.0         8.245314e-06         7.749436e-06                   0.0
+                 lifting.fcs.0       0.000000e+00       0.000000e+00                 0.0        6.571441e-09        6.533350e-09                  0.0         6.309066e-05         6.308360e-05                   0.0         1.533928e-04         1.403724e-04                   0.0
+                 lifting.fcs.1       0.000000e+00       0.000000e+00                 0.0        6.945454e-11        6.945454e-11                  0.0         3.001004e-10         2.089375e-10                   0.0         1.494792e-05         1.328837e-05                   0.0
+              projection.fcs.0       0.000000e+00       0.000000e+00                 0.0        1.016711e-16        1.016711e-16                  0.0         1.337965e-08         1.075128e-08                   0.0         5.629706e-06         5.578570e-06                   0.0
+              projection.fcs.1       1.174733e-17       6.879263e-18                 0.0        2.077487e-11        1.967833e-11                  0.0         1.941615e-07         1.938561e-07                   0.0         3.903415e-06         3.855574e-06                   0.0
+
+
+--- Activation Faults ---
+                         Layer  Q1 (bits 0-7)_MSE  Q1 (bits 0-7)_Std  Q1 (bits 0-7)_NaN%  Q2 (bits 8-15)_MSE  Q2 (bits 8-15)_Std  Q2 (bits 8-15)_NaN%  Q3 (bits 16-23)_MSE  Q3 (bits 16-23)_Std  Q3 (bits 16-23)_NaN%  Q4 (bits 24-31)_MSE  Q4 (bits 24-31)_Std  Q4 (bits 24-31)_NaN%
+            fno_blocks.convs.0       6.257427e-12       3.469595e-12                 0.0        2.583437e-11        7.174985e-12                  0.0         1.354121e-09         4.833916e-10                   0.0         1.052860e-07         0.000000e+00                  50.0
+            fno_blocks.convs.1       4.485452e-12       1.547187e-12                 0.0        4.885736e-11        3.495293e-11                  0.0         7.349742e-08         6.854737e-08                   0.0         4.450472e-08         0.000000e+00                  50.0
+            fno_blocks.convs.2       2.626149e-12       2.569054e-12                 0.0        3.840461e-12        1.011158e-12                  0.0         6.502331e-10         5.556760e-10                   0.0         2.947203e-08         0.000000e+00                  50.0
+            fno_blocks.convs.3       0.000000e+00       0.000000e+00                 0.0        3.567352e-13        3.272591e-13                  0.0         8.692105e-09         5.304841e-09                   0.0                  NaN                  NaN                 100.0
+   fno_blocks.fno_skips.0.conv       6.332981e-12       6.223608e-12                 0.0        1.684474e-11        1.754470e-12                  0.0         3.138194e-09         6.444107e-10                   0.0         7.039293e-09         2.085643e-09                   0.0
+   fno_blocks.fno_skips.1.conv       6.691643e-12       3.220119e-12                 0.0        2.910029e-11        1.608162e-11                  0.0         5.381333e-09         5.285104e-09                   0.0         1.042866e-08         0.000000e+00                  50.0
+   fno_blocks.fno_skips.2.conv       6.921708e-13       8.860716e-14                 0.0        8.024827e-12        7.743031e-12                  0.0         5.367241e-09         5.196446e-09                   0.0         3.843821e-07         3.690883e-07                   0.0
+   fno_blocks.fno_skips.3.conv       0.000000e+00       0.000000e+00                 0.0        3.679354e-15        1.164861e-15                  0.0         2.375231e-10         2.202829e-10                   0.0         5.804636e-08         3.631275e-08                   0.0
+fno_blocks.channel_mlp.0.fcs.0       4.781738e-12       3.560559e-12                 0.0        2.081621e-11        9.331272e-12                  0.0         1.018081e-08         7.707946e-09                   0.0         1.739836e-07         0.000000e+00                  50.0
+fno_blocks.channel_mlp.0.fcs.1       5.307412e-12       6.112915e-13                 0.0        5.549069e-12        1.487518e-12                  0.0         5.780618e-09         4.132013e-09                   0.0         2.516735e-07         0.000000e+00                  50.0
+fno_blocks.channel_mlp.1.fcs.0       1.018843e-11       4.546881e-12                 0.0        2.296766e-11        1.426791e-11                  0.0         1.807114e-09         4.058682e-10                   0.0         2.447950e-07         1.864303e-08                   0.0
+fno_blocks.channel_mlp.1.fcs.1       8.356114e-12       2.994780e-12                 0.0        8.763559e-12        2.565559e-12                  0.0         4.484058e-09         3.480374e-09                   0.0         3.326171e-08         1.414289e-08                   0.0
+fno_blocks.channel_mlp.2.fcs.0       1.337518e-12       1.186894e-12                 0.0        3.414924e-12        2.947879e-12                  0.0         2.018367e-08         1.558561e-08                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.2.fcs.1       1.546415e-13       5.794784e-14                 0.0        4.748255e-12        1.655532e-12                  0.0         4.127211e-10         5.597096e-12                   0.0         6.725609e-07         6.338668e-07                   0.0
+fno_blocks.channel_mlp.3.fcs.0       0.000000e+00       0.000000e+00                 0.0        1.004535e-11        9.224569e-12                  0.0         2.484759e-09         2.305351e-09                   0.0         9.167397e-08         0.000000e+00                  50.0
+fno_blocks.channel_mlp.3.fcs.1       0.000000e+00       0.000000e+00                 0.0        3.317294e-13        3.077680e-13                  0.0         1.556988e-07         1.546192e-07                   0.0         1.416604e-07         0.000000e+00                  50.0
+                 lifting.fcs.0       3.601714e-14       3.601714e-14                 0.0        1.634307e-11        4.987472e-12                  0.0         1.252456e-07         5.145202e-08                   0.0         5.402280e-08         0.000000e+00                  50.0
+                 lifting.fcs.1       4.938585e-12       9.492643e-13                 0.0        1.133209e-10        9.553740e-11                  0.0         7.866763e-09         3.728527e-09                   0.0                  NaN                  NaN                 100.0
+              projection.fcs.0       0.000000e+00       0.000000e+00                 0.0        4.771684e-12        4.758441e-12                  0.0         2.630453e-09         2.526450e-09                   0.0         1.829937e-06         1.821003e-06                   0.0
+              projection.fcs.1       1.744030e-14       6.054792e-15                 0.0        4.964321e-10        2.519030e-10                  0.0         1.556659e-04         2.868904e-06                   0.0                  NaN                  NaN                 100.0
+
+============================================================
+SPECTRAL CONVOLUTION: REAL vs IMAGINARY COMPONENT SENSITIVITY
+============================================================
+
+Q1 (bits 0-7):
+  fno_blocks.convs.0 [Real]: 8.018825e-12
+  fno_blocks.convs.0 [Imag]: 1.160129e-12
+  fno_blocks.convs.1 [Real]: 1.899833e-13
+  fno_blocks.convs.1 [Imag]: 1.852980e-12
+  fno_blocks.convs.2 [Real]: 1.291304e-12
+  fno_blocks.convs.2 [Imag]: 4.298775e-15
+  fno_blocks.convs.3 [Real]: 5.551115e-18
+  fno_blocks.convs.3 [Imag]: 0.000000e+00
+
+Q2 (bits 8-15):
+  fno_blocks.convs.0 [Real]: 1.675124e-11
+  fno_blocks.convs.0 [Imag]: 1.084816e-11
+  fno_blocks.convs.1 [Real]: 9.531660e-12
+  fno_blocks.convs.1 [Imag]: 1.015055e-11
+  fno_blocks.convs.2 [Real]: 1.364397e-11
+  fno_blocks.convs.2 [Imag]: 2.862277e-12
+  fno_blocks.convs.3 [Real]: 8.844596e-15
+  fno_blocks.convs.3 [Imag]: 5.021786e-14
+
+Q3 (bits 16-23):
+  fno_blocks.convs.0 [Real]: 6.045752e-11
+  fno_blocks.convs.0 [Imag]: 7.409365e-10
+  fno_blocks.convs.1 [Real]: 3.438435e-10
+  fno_blocks.convs.1 [Imag]: 1.565785e-11
+  fno_blocks.convs.2 [Real]: 1.950430e-10
+  fno_blocks.convs.2 [Imag]: 5.283806e-11
+  fno_blocks.convs.3 [Real]: 1.240458e-10
+  fno_blocks.convs.3 [Imag]: 1.646472e-11
+
+Q4 (bits 24-31):
+  fno_blocks.convs.0 [Real]: 1.556946e-09
+  fno_blocks.convs.0 [Imag]: 2.344751e-09
+  fno_blocks.convs.1 [Real]: 1.874781e-09
+  fno_blocks.convs.1 [Imag]: 1.928774e-09
+  fno_blocks.convs.2 [Real]: 5.982467e-09
+  fno_blocks.convs.2 [Imag]: 5.054274e-09
+  fno_blocks.convs.3 [Real]: 2.307421e-09
+  fno_blocks.convs.3 [Imag]: 3.365839e-09

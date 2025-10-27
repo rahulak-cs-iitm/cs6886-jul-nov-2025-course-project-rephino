@@ -1,0 +1,45 @@
+Running on device: cuda
+Loading Darcy dataset...
+Loading test db for resolution 32 with 100 samples 
+Loading test db for resolution 64 with 50 samples 
+Loading FNO model...
+Model loaded successfully
+
+============================================================
+COLLECTING MAXIMUM ACTIVATION VALUES
+============================================================
+Registered hooks on 20 layers
+
+Processing 100 samples...
+  Processed 10/100 samples, current max: 1.134629e+01
+  Processed 20/100 samples, current max: 1.139962e+01
+  Processed 30/100 samples, current max: 1.170664e+01
+  Processed 40/100 samples, current max: 1.170664e+01
+  Processed 50/100 samples, current max: 1.170664e+01
+  Processed 60/100 samples, current max: 1.170664e+01
+  Processed 70/100 samples, current max: 1.184284e+01
+  Processed 80/100 samples, current max: 1.218562e+01
+  Processed 90/100 samples, current max: 1.218562e+01
+  Processed 100/100 samples, current max: 1.218562e+01
+
+Processed 100 samples
+
+Global maximum activation value: 1.218562e+01
+
+Results saved to: max_activation_value.json
+
+Top 10 layers by maximum activation:
+  1. fno_blocks.convs.0: 1.218562e+01
+  2. fno_blocks.channel_mlp.0.fcs.0: 1.184284e+01
+  3. fno_blocks.channel_mlp.1.fcs.0: 1.084487e+01
+  4. fno_blocks.channel_mlp.0.fcs.1: 5.674655e+00
+  5. fno_blocks.channel_mlp.3.fcs.0: 5.555378e+00
+  6. fno_blocks.convs.3: 5.471420e+00
+  7. fno_blocks.convs.1: 5.346797e+00
+  8. fno_blocks.fno_skips.0.conv: 5.294096e+00
+  9. fno_blocks.channel_mlp.1.fcs.1: 4.618136e+00
+  10. projection.fcs.0: 4.430979e+00
+
+============================================================
+MAX ACTIVATION COLLECTION COMPLETE
+============================================================

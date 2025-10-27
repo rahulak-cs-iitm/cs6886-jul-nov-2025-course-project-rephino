@@ -1,0 +1,27 @@
+{
+  "global_max_activation": 12.185623168945312,
+  "num_samples_analyzed": 100,
+  "model_path": "../../../Checkpoints/Darcy/darcy_fno_state_dict.pt",
+  "layer_max_activations": {
+    "lifting.fcs.0": 1.7309465408325195,
+    "lifting.fcs.1": 2.140597105026245,
+    "fno_blocks.fno_skips.0.conv": 5.294095516204834,
+    "fno_blocks.convs.0": 12.185623168945312,
+    "fno_blocks.channel_mlp.0.fcs.0": 11.842841148376465,
+    "fno_blocks.channel_mlp.0.fcs.1": 5.674655437469482,
+    "fno_blocks.fno_skips.1.conv": 2.5031957626342773,
+    "fno_blocks.convs.1": 5.346797466278076,
+    "fno_blocks.channel_mlp.1.fcs.0": 10.844870567321777,
+    "fno_blocks.channel_mlp.1.fcs.1": 4.618136405944824,
+    "fno_blocks.fno_skips.2.conv": 2.856550455093384,
+    "fno_blocks.convs.2": 4.2817158699035645,
+    "fno_blocks.channel_mlp.2.fcs.0": 3.7202279567718506,
+    "fno_blocks.channel_mlp.2.fcs.1": 2.164186716079712,
+    "fno_blocks.fno_skips.3.conv": 2.094489574432373,
+    "fno_blocks.convs.3": 5.471419811248779,
+    "fno_blocks.channel_mlp.3.fcs.0": 5.555378437042236,
+    "fno_blocks.channel_mlp.3.fcs.1": 3.153005361557007,
+    "projection.fcs.0": 4.430979251861572,
+    "projection.fcs.1": 4.393352508544922
+  }
+}
