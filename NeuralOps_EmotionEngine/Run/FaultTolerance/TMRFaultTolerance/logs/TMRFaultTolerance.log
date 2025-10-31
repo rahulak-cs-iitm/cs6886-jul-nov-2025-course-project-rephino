@@ -53,6 +53,38 @@ Delta MSE vs clean: 1.992473e-03
 MSE increased by: 13.91%
 
 ================================================================================
+INFERENCE TIME BENCHMARK
+================================================================================
+Loading test db for resolution 32 with 100 samples 
+Loading test db for resolution 64 with 50 samples 
+
+Benchmarking on 100 samples (with 10 warmup iterations)
+
+Warming up original model...
+Benchmarking original model...
+Warming up TMR model...
+Benchmarking TMR model...
+
+--------------------------------------------------------------------------------
+BENCHMARK RESULTS
+--------------------------------------------------------------------------------
+Original Model:
+  Total time:       0.2390 seconds
+  Time per sample:  2.39 ms
+  Throughput:       418.43 samples/sec
+
+TMR Model:
+  Total time:       0.3323 seconds
+  Time per sample:  3.32 ms
+  Throughput:       300.90 samples/sec
+
+Overhead:
+  Additional time:  0.0934 seconds
+  Time overhead:    39.06%
+  Slowdown factor:  1.39x
+--------------------------------------------------------------------------------
+
+================================================================================
 TMR Implementation Complete
 TMR model saved to: checkpoints/darcy_fno_tmr.pth
 ================================================================================

@@ -1,5 +1,5 @@
 # ActivationClipping.py
-#   Activation fault injection with per-layer clipping and MSE analysis
+#   Activation fault injection with per-layer clipping, MSE analysis, and timing
 
 import torch
 import numpy as np
@@ -8,6 +8,7 @@ import struct
 import json
 import matplotlib.pyplot as plt
 import os
+import time
 from neuralop.models import FNO
 from neuralop.data.datasets.darcy import DarcyDataset
 from torch.utils.data import DataLoader
@@ -57,7 +58,7 @@ dataset = DarcyDataset(root_dir="../../../Data/Darcy",
                        test_batch_sizes=[32, 32],
                        train_resolution=32,
                        test_resolutions=[32, 64],
-                       download=True)
+                       download=False)
 
 data_processor = dataset.data_processor
 test_loader = DataLoader(dataset.test_dbs[32],
@@ -98,6 +99,7 @@ class ActivationFaultInjectorPerLayer:
         self.quadrant_bits = quadrant_bits
         self.enable_clipping = enable_clipping
         
+        # Determine the clipping ceiling for this layer
         if layer_max_dict and layer_name in layer_max_dict:
             self.max_ceiling = layer_max_dict[layer_name]
         else:
@@ -112,28 +114,75 @@ class ActivationFaultInjectorPerLayer:
             return
         
         shape = output.shape
+        # Select a random neuron in the output tensor
         rand_idx = tuple([0] + [random.randint(0, dim - 1) for dim in shape[1:]])
         
         original_val = output[rand_idx].item()
+        
+        # Apply the bit-flip
         flipped_val, bit_pos = single_bit_flip_quadrant(original_val, self.quadrant_bits)
         self.bit_flipped = bit_pos
         
         if self.enable_clipping and self.max_ceiling is not None:
-            if abs(flipped_val) > self.max_ceiling:
+            # Check for NaN (using logic value != value
+            if flipped_val != flipped_val or flipped_val == float('inf') or flipped_val == float('-inf'):
+                self.clipping_applied = True
+                # Replace the invalid number with the max ceiling value.
+                flipped_val = self.max_ceiling
+            # If the value is a valid number, check if it exceeds the clipping threshold.
+            elif abs(flipped_val) > self.max_ceiling:
                 self.clipping_applied = True
                 flipped_val = self.max_ceiling if flipped_val > 0 else -self.max_ceiling
         
+        # Apply the corrected value back to the tensor
         with torch.no_grad():
             output[rand_idx] = flipped_val
     
     def register_hook(self):
-        self.hook_handle = self.layer_module.register_forward_hook(
-            self.single_bit_flip_hook)
+        """Registers the forward hook to the layer."""
+        self.hook_handle = self.layer_module.register_forward_hook(self.single_bit_flip_hook)
     
     def remove_hook(self):
+        """Removes the forward hook."""
         if self.hook_handle is not None:
             self.hook_handle.remove()
             self.hook_handle = None
+
+
+#==================
+# Activation Clipping Module (for benchmarking)
+#------------------
+class ActivationClippingModule:
+    """Wrapper to apply activation clipping to a model."""
+    def __init__(self, model, layer_max_dict, global_max):
+        self.model = model
+        self.layer_max_dict = layer_max_dict
+        self.global_max = global_max
+        self.hooks = []
+        self._register_clipping_hooks()
+    
+    def _clipping_hook(self, layer_name, max_val):
+        def hook(module, input, output):
+            # Clip output to [-max_val, +max_val]
+            return torch.clamp(output, -max_val, max_val)
+        return hook
+    
+    def _register_clipping_hooks(self):
+        for name, module in self.model.named_modules():
+            if isinstance(module, (torch.nn.Conv1d, torch.nn.Conv2d, 
+                                   torch.nn.Linear, torch.nn.ConvTranspose2d)) or \
+               'SpectralConv' in type(module).__name__:
+                max_val = self.layer_max_dict.get(name, self.global_max)
+                hook = module.register_forward_hook(self._clipping_hook(name, max_val))
+                self.hooks.append(hook)
+    
+    def remove_hooks(self):
+        for hook in self.hooks:
+            hook.remove()
+        self.hooks = []
+    
+    def __call__(self, x):
+        return self.model(x)
 
 #==================
 # Helper Functions
@@ -165,6 +214,118 @@ def calculate_mse(output1, output2):
         return np.nan
     
     return mse
+
+#==================
+# Inference Time Benchmark
+#------------------
+def benchmark_clipping_overhead(model_path, test_loader, num_samples=100, warmup=10):
+    """
+    Benchmark inference time with and without activation clipping.
+    """
+    print("\n" + "="*80)
+    print("ACTIVATION CLIPPING INFERENCE TIME BENCHMARK")
+    print("="*80)
+    
+    # Load original model
+    original_model = FNO(n_modes=(32, 32), in_channels=1, out_channels=1,
+                        hidden_channels=32, projection_channel_ratio=2)
+    original_model = original_model.to(device)
+    original_model.load_state_dict(torch.load(model_path, map_location=device, weights_only=False))
+    original_model.eval()
+    
+    # Create clipping-enabled model
+    clipping_model = ActivationClippingModule(original_model, LAYER_MAX_ACTIVATIONS, 
+                                              GLOBAL_MAX_ACTIVATION)
+    
+    # Collect test inputs
+    test_inputs = []
+    for idx, data in enumerate(test_loader):
+        if idx >= num_samples:
+            break
+        data = data_processor.preprocess(data, batched=True)
+        x = data['x'].to(device)
+        test_inputs.append(x)
+    
+    print(f"\nBenchmarking on {len(test_inputs)} samples (with {warmup} warmup iterations)")
+    
+    # Warmup - Original Model
+    print("\nWarming up original model...")
+    for i in range(warmup):
+        with torch.no_grad():
+            _ = original_model(test_inputs[i % len(test_inputs)])
+    
+    # Benchmark - Original Model (WITHOUT clipping)
+    print("Benchmarking original model (no clipping)...")
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    start_time = time.time()
+    for x in test_inputs:
+        with torch.no_grad():
+            _ = original_model(x)
+    
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    original_time = time.time() - start_time
+    original_time_per_sample = original_time / len(test_inputs)
+    
+    # Warmup - Clipping Model
+    print("Warming up model with clipping...")
+    for i in range(warmup):
+        with torch.no_grad():
+            _ = clipping_model(test_inputs[i % len(test_inputs)])
+    
+    # Benchmark - Clipping Model
+    print("Benchmarking model with activation clipping...")
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    start_time = time.time()
+    for x in test_inputs:
+        with torch.no_grad():
+            _ = clipping_model(x)
+    
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    clipping_time = time.time() - start_time
+    clipping_time_per_sample = clipping_time / len(test_inputs)
+    
+    # Calculate overhead
+    time_overhead = clipping_time - original_time
+    time_overhead_pct = (clipping_time / original_time - 1) * 100
+    
+    # Clean up hooks
+    clipping_model.remove_hooks()
+    
+    # Print results
+    print("\n" + "-"*80)
+    print("BENCHMARK RESULTS")
+    print("-"*80)
+    print(f"Original Model (No Clipping):")
+    print(f"  Total time:       {original_time:.4f} seconds")
+    print(f"  Time per sample:  {original_time_per_sample*1000:.2f} ms")
+    print(f"  Throughput:       {len(test_inputs)/original_time:.2f} samples/sec")
+    
+    print(f"\nModel with Activation Clipping:")
+    print(f"  Total time:       {clipping_time:.4f} seconds")
+    print(f"  Time per sample:  {clipping_time_per_sample*1000:.2f} ms")
+    print(f"  Throughput:       {len(test_inputs)/clipping_time:.2f} samples/sec")
+    
+    print(f"\nOverhead:")
+    print(f"  Additional time:  {time_overhead:.4f} seconds")
+    print(f"  Time overhead:    {time_overhead_pct:.2f}%")
+    print(f"  Slowdown factor:  {clipping_time/original_time:.2f}x")
+    print("-"*80)
+    
+    return {
+        'original_time': original_time,
+        'clipping_time': clipping_time,
+        'overhead_pct': time_overhead_pct,
+        'original_per_sample': original_time_per_sample,
+        'clipping_per_sample': clipping_time_per_sample
+    }
 
 #==================
 # Main Analysis with MSE Tracking
@@ -491,7 +652,11 @@ if __name__ == "__main__":
     
     model_path = '../../../Checkpoints/Darcy/darcy_fno_state_dict.pt'
     
-    # Run analysis
+    # Benchmark inference time overhead
+    timing_results = benchmark_clipping_overhead(model_path, test_loader, 
+                                                 num_samples=100, warmup=10)
+    
+    # Run fault injection analysis
     comparison_results, injectable_layers = analyze_activation_with_mse_tracking(
         model_path, test_loader)
     

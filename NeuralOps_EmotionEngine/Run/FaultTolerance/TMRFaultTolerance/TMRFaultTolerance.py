@@ -3,12 +3,14 @@
 #   - Triplicate weights for non-SpectralConv layers
 #   - Implement bit-level majority voting during inference
 #   - Save TMR-protected model as .pth file
+#   - Benchmark inference time overhead
 
 import torch
 import torch.nn as nn
 import struct
 import numpy as np
 import random
+import time
 from neuralop.models import FNO
 import warnings
 warnings.filterwarnings('ignore', message='.*non-tuple sequence for multidimensional indexing.*')
@@ -59,16 +61,27 @@ def majority_vote_tensor(t1, t2, t3):
     """
     Apply bit-level majority voting to three tensors element-wise.
     """
-    # Flatten tensors
-    flat1 = t1.flatten().cpu().numpy()
-    flat2 = t2.flatten().cpu().numpy()
-    flat3 = t3.flatten().cpu().numpy()
+    i1 = t1.view(torch.int32)
+    i2 = t2.view(torch.int32)
+    i3 = t3.view(torch.int32)
     
-    result = np.zeros_like(flat1)
-    for i in range(len(flat1)):
-        result[i] = majority_vote_bits(flat1[i], flat2[i], flat3[i])
+    # Bitwise majority vote: (A&B) | (B&C) | (A&C)
+    # This computes majority for each bit position simultaneously
+    result_int = (i1 & i2) | (i2 & i3) | (i1 & i3)
     
-    return torch.tensor(result, dtype=t1.dtype, device=t1.device).reshape(t1.shape)
+    # Convert back to float32
+    return result_int.view(torch.float32)
+
+    # CPU - Slow! # Flatten tensors
+    # CPU - Slow! flat1 = t1.flatten().cpu().numpy()
+    # CPU - Slow! flat2 = t2.flatten().cpu().numpy()
+    # CPU - Slow! flat3 = t3.flatten().cpu().numpy()
+    # CPU - Slow! 
+    # CPU - Slow! result = np.zeros_like(flat1)
+    # CPU - Slow! for i in range(len(flat1)):
+    # CPU - Slow!     result[i] = majority_vote_bits(flat1[i], flat2[i], flat3[i])
+    # CPU - Slow! 
+    # CPU - Slow! return torch.tensor(result, dtype=t1.dtype, device=t1.device).reshape(t1.shape)
 
 #==================
 # TMR-Protected FNO Model
@@ -90,7 +103,6 @@ class TMR_FNO(nn.Module):
             if 'convs' not in name and 'weight' in name:
                 # This is a non-SpectralConv weight that needs TMR protection
                 # Store 3 copies as buffers (non-trainable)
-                # buffer names cannot contain . so replacing with _
                 name_upd = name.replace('.','_')
                 self.register_buffer(f'tmr_{name_upd}_copy1', param.data.clone())
                 self.register_buffer(f'tmr_{name_upd}_copy2', param.data.clone())
@@ -107,7 +119,6 @@ class TMR_FNO(nn.Module):
         Apply majority voting to all TMR-protected weights and update base model.
         Call this before each forward pass to correct any bit flips.
         """
-        # Added since TMR weights are saved using _, param expects .
         param_dict = dict(self.base_model.named_parameters())
 
         for name, copies in self.tmr_weights.items():
@@ -184,8 +195,6 @@ class TMR_FNO(nn.Module):
             return None
         
         # Convert standard bit position to string index
-        # Standard: bit 0 = LSB, bit 31 = MSB (sign)
-        # String:   index 0 = MSB (sign), index 31 = LSB
         bit_pos_string = 31 - bit_pos_standard
         
         copy_name = self.tmr_weights[layer_name][f'copy{copy_num}']
@@ -256,15 +265,129 @@ def load_tmr_model(base_model_path, tmr_model_path):
     base_model = FNO(n_modes=(32, 32), in_channels=1, out_channels=1,
                      hidden_channels=32, projection_channel_ratio=2)
     base_model = base_model.to(device)
-    base_model.load_state_dict(torch.load(base_model_path, map_location=device, weights_only=True))
+    base_model.load_state_dict(torch.load(base_model_path, map_location=device, weights_only=False))
     
     print("Loading TMR-protected weights...")
     tmr_model = TMR_FNO(base_model)
-    tmr_model.load_state_dict(torch.load(tmr_model_path, map_location=device))
+    tmr_model.load_state_dict(torch.load(tmr_model_path, map_location=device, weights_only=False), 
+                              strict=False)
     tmr_model.eval()
     
     print("TMR model loaded successfully!")
     return tmr_model
+
+#==================
+# Inference Time Benchmark
+#------------------
+def benchmark_inference_time(original_model, tmr_model, test_loader, num_samples=100, warmup=10):
+    """
+    Benchmark inference time for original vs TMR model.
+    
+    Args:
+        original_model: Original FNO model
+        tmr_model: TMR-protected FNO model
+        test_loader: DataLoader for test data
+        num_samples: Number of samples to benchmark
+        warmup: Number of warmup iterations
+    """
+    print("\n" + "="*80)
+    print("INFERENCE TIME BENCHMARK")
+    print("="*80)
+    
+    from neuralop.data.datasets.darcy import DarcyDataset
+    dataset = DarcyDataset(root_dir="../../../Data/Darcy",
+                          n_train=1000, n_tests=[100, 50],
+                          batch_size=32, test_batch_sizes=[32, 32],
+                          train_resolution=32, test_resolutions=[32, 64],
+                          download=False)
+    data_processor = dataset.data_processor
+    
+    # Collect test inputs
+    test_inputs = []
+    for idx, data in enumerate(test_loader):
+        if idx >= num_samples:
+            break
+        data = data_processor.preprocess(data, batched=True)
+        x = data['x'].to(device)
+        test_inputs.append(x)
+    
+    print(f"\nBenchmarking on {len(test_inputs)} samples (with {warmup} warmup iterations)")
+    
+    # Warmup - Original Model
+    print("\nWarming up original model...")
+    for i in range(warmup):
+        with torch.no_grad():
+            _ = original_model(test_inputs[i % len(test_inputs)])
+    
+    # Benchmark - Original Model
+    print("Benchmarking original model...")
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    start_time = time.time()
+    for x in test_inputs:
+        with torch.no_grad():
+            _ = original_model(x)
+    
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    original_time = time.time() - start_time
+    original_time_per_sample = original_time / len(test_inputs)
+    
+    # Warmup - TMR Model
+    print("Warming up TMR model...")
+    for i in range(warmup):
+        with torch.no_grad():
+            _ = tmr_model(test_inputs[i % len(test_inputs)])
+    
+    # Benchmark - TMR Model
+    print("Benchmarking TMR model...")
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    start_time = time.time()
+    for x in test_inputs:
+        with torch.no_grad():
+            _ = tmr_model(x)
+    
+    if device.type == 'cuda':
+        torch.cuda.synchronize()
+    
+    tmr_time = time.time() - start_time
+    tmr_time_per_sample = tmr_time / len(test_inputs)
+    
+    # Calculate overhead
+    time_overhead = tmr_time - original_time
+    time_overhead_pct = (tmr_time / original_time - 1) * 100
+    
+    # Print results
+    print("\n" + "-"*80)
+    print("BENCHMARK RESULTS")
+    print("-"*80)
+    print(f"Original Model:")
+    print(f"  Total time:       {original_time:.4f} seconds")
+    print(f"  Time per sample:  {original_time_per_sample*1000:.2f} ms")
+    print(f"  Throughput:       {len(test_inputs)/original_time:.2f} samples/sec")
+    
+    print(f"\nTMR Model:")
+    print(f"  Total time:       {tmr_time:.4f} seconds")
+    print(f"  Time per sample:  {tmr_time_per_sample*1000:.2f} ms")
+    print(f"  Throughput:       {len(test_inputs)/tmr_time:.2f} samples/sec")
+    
+    print(f"\nOverhead:")
+    print(f"  Additional time:  {time_overhead:.4f} seconds")
+    print(f"  Time overhead:    {time_overhead_pct:.2f}%")
+    print(f"  Slowdown factor:  {tmr_time/original_time:.2f}x")
+    print("-"*80)
+    
+    return {
+        'original_time': original_time,
+        'tmr_time': tmr_time,
+        'overhead_pct': time_overhead_pct,
+        'original_per_sample': original_time_per_sample,
+        'tmr_per_sample': tmr_time_per_sample
+    }
 
 #==================
 # Testing TMR Functionality
@@ -354,7 +477,10 @@ def test_tmr_correction():
     delta_mse_3 = abs(mse_failed - mse_clean)
     print(f"\nMSE (TMR - 2 faults in same copy - cannot correct): {mse_failed:.6e}")
     print(f"Delta MSE vs clean: {delta_mse_3:.6e}")
-    print(f"MSE increased by: {((mse_failed/mse_clean - 1) * 100):.2f}%") 
+    print(f"MSE increased by: {((mse_failed/mse_clean - 1) * 100):.2f}%")
+    
+    # Benchmark inference time
+    benchmark_inference_time(original_model, tmr_model, test_loader, num_samples=100, warmup=10)
 
 #==================
 # Main Execution
