@@ -12,9 +12,9 @@
 The project is organized into two main sections:
 
 1. Sloshing Neural Operator (Pradyumnan)
-2. NeuralOps_Reliability (Rahul)
+2. NeuralOps_EmotionEngine (Rahul)
 
-## 2. NeuralOps_Reliability
+## 2. NeuralOps_EmotionEngine
 
 This section contains the code for Reliability Analysis of the FNO, through Fault injection campaigns. It also contains the code to apply selective TMR and Activation Clipping to the FNO on the basis of the fault simulation results.
 
