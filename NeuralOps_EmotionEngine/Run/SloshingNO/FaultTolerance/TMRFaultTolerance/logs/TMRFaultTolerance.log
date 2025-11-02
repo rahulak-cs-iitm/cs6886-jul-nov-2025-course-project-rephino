@@ -1,0 +1,81 @@
+Loading original FNO model..
+Creating TMR-protected model...
+
+Original model parameters: 9,450,659
+TMR model parameters + buffers: 9,489,635
+Overhead: 38,976 (0.41%)
+
+Saving TMR-protected model to checkpoints/sloshing_fno_tmr.pth...
+TMR model saved successfully!
+
+================================================================================
+TESTING TMR CORRECTION CAPABILITY
+================================================================================
+Loading original FNO model..
+Creating TMR-protected model...
+
+Original model parameters: 9,450,659
+TMR model parameters + buffers: 9,489,635
+Overhead: 38,976 (0.41%)
+
+Saving TMR-protected model to checkpoints/sloshing_fno_tmr.pth...
+TMR model saved successfully!
+
+Test 1: TMR model inference (no faults)
+MSE (TMR - no faults injected): 0.000000e+00
+
+Test 2: Single-bit error in one copy (TMR corrects)
+Injected fault in fno_blocks.fno_skips.0.conv.weight, copy 1, bit 30
+  Original: 5.221558e-02, Flipped: 5.221558e-02
+MSE (TMR - fault injected in 1 copy - corrected): 0.000000e+00
+Delta MSE vs clean: 0.000000e+00
+
+Test 3: Two-bit errors in same weight (TMR fails)
+Injected fault in fno_blocks.fno_skips.0.conv.weight, copy 1, bit 30 (standard), idx 12
+  Original: 1.6425147653e-01 (bits: 00111110001010000011000110001010)
+  Flipped:  5.5891881203e+37 (bits: 01111110001010000011000110001010)
+  Sign changed: False
+  Magnitude changed: True
+Injected fault in fno_blocks.fno_skips.0.conv.weight, copy 2, bit 30 (standard), idx 12
+  Original: 1.6425147653e-01 (bits: 00111110001010000011000110001010)
+  Flipped:  5.5891881203e+37 (bits: 01111110001010000011000110001010)
+  Sign changed: False
+  Magnitude changed: True
+
+MSE (TMR - 2 faults in same copy - cannot correct): inf
+Delta MSE vs clean: inf
+
+================================================================================
+INFERENCE TIME BENCHMARK
+================================================================================
+
+Benchmarking on 100 samples (with 10 warmup iterations)
+
+Warming up original model...
+Benchmarking original model...
+Warming up TMR model...
+Benchmarking TMR model...
+
+--------------------------------------------------------------------------------
+BENCHMARK RESULTS
+--------------------------------------------------------------------------------
+Original Model:
+  Total time:       0.4377 seconds
+  Time per sample:  4.38 ms
+  Throughput:       228.49 samples/sec
+
+TMR Model:
+  Total time:       0.6279 seconds
+  Time per sample:  6.28 ms
+  Throughput:       159.26 samples/sec
+
+Overhead:
+  Additional time:  0.1902 seconds
+  Time overhead:    43.47%
+  Slowdown factor:  1.43x
+--------------------------------------------------------------------------------
+
+================================================================================
+TMR Implementation Complete
+TMR model saved to: checkpoints/sloshing_fno_tmr.pth
+================================================================================

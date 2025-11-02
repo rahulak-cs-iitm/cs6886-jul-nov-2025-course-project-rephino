@@ -1,0 +1,477 @@
+Running on device: cuda
+Loading max activations from: max_activation_value.json
+Global max activation: 1.136961e+00
+Loaded per-layer max for 20 layers
+
+================================================================================
+ACTIVATION CLIPPING INFERENCE TIME BENCHMARK
+================================================================================
+
+Benchmarking on 100 samples (with 10 warmup iterations)
+
+Warming up original model...
+Benchmarking original model (no clipping)...
+Warming up model with clipping...
+Benchmarking model with activation clipping...
+
+--------------------------------------------------------------------------------
+BENCHMARK RESULTS
+--------------------------------------------------------------------------------
+Original Model (No Clipping):
+  Total time:       0.2844 seconds
+  Time per sample:  2.84 ms
+  Throughput:       351.59 samples/sec
+
+Model with Activation Clipping:
+  Total time:       0.2855 seconds
+  Time per sample:  2.85 ms
+  Throughput:       350.30 samples/sec
+
+Overhead:
+  Additional time:  0.0010 seconds
+  Time overhead:    0.37%
+  Slowdown factor:  1.00x
+--------------------------------------------------------------------------------
+
+============================================================
+ACTIVATION FAULT INJECTION - MSE ANALYSIS
+============================================================
+
+Found 20 injectable layers
+
+Collecting baseline outputs...
+Collected 50 baseline outputs
+
+============================================================
+Quadrant: Q1 (bits 0-7)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 5.875310e-17 ± 1.043130e-16 (n=100)
+  MSE (with):    5.875310e-17 ± 1.043130e-16 (n=100)
+
+Layer 2/20: fno_blocks.convs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.044118e-17 ± 4.903162e-17 (n=100)
+  MSE (with):    2.044118e-17 ± 4.903162e-17 (n=100)
+
+Layer 3/20: fno_blocks.convs.2
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.860963e-18 ± 1.134766e-17 (n=100)
+  MSE (with):    3.860963e-18 ± 1.134766e-17 (n=100)
+
+Layer 4/20: fno_blocks.convs.3
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.666280e-20 ± 2.348661e-19 (n=100)
+  MSE (with):    3.666280e-20 ± 2.348661e-19 (n=100)
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 5.263309e-17 ± 9.378214e-17 (n=100)
+  MSE (with):    5.263309e-17 ± 9.378214e-17 (n=100)
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.308982e-18 ± 2.227357e-17 (n=100)
+  MSE (with):    4.308982e-18 ± 2.227357e-17 (n=100)
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.084555e-18 ± 1.486850e-17 (n=100)
+  MSE (with):    3.084555e-18 ± 1.486850e-17 (n=100)
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.077389e-20 ± 4.016537e-19 (n=100)
+  MSE (with):    4.077389e-20 ± 4.016537e-19 (n=100)
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 5.170632e-15 ± 4.463339e-16 (n=100)
+  MSE (with):    5.170632e-15 ± 4.463339e-16 (n=100)
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.958612e-15 ± 4.319110e-16 (n=100)
+  MSE (with):    4.958612e-15 ± 4.319110e-16 (n=100)
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.401992e-15 ± 2.052817e-16 (n=100)
+  MSE (with):    1.401992e-15 ± 2.052817e-16 (n=100)
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.515625e-15 ± 2.033808e-16 (n=100)
+  MSE (with):    1.515625e-15 ± 2.033808e-16 (n=100)
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.487266e-17 ± 1.297464e-17 (n=100)
+  MSE (with):    2.487266e-17 ± 1.297464e-17 (n=100)
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 6.274981e-17 ± 2.706285e-17 (n=100)
+  MSE (with):    6.274981e-17 ± 2.706285e-17 (n=100)
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.116021e-19 ± 1.891800e-18 (n=100)
+  MSE (with):    4.116021e-19 ± 1.891800e-18 (n=100)
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.626926e-19 ± 6.875621e-19 (n=100)
+  MSE (with):    1.626926e-19 ± 6.875621e-19 (n=100)
+
+Layer 17/20: lifting.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.781498e-17 ± 9.759447e-17 (n=100)
+  MSE (with):    2.781498e-17 ± 9.759447e-17 (n=100)
+
+Layer 18/20: lifting.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 9.713360e-15 ± 4.872021e-16 (n=100)
+  MSE (with):    9.713360e-15 ± 4.872021e-16 (n=100)
+
+Layer 19/20: projection.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.055487e-20 ± 6.369000e-21 (n=100)
+  MSE (with):    1.055487e-20 ± 6.369000e-21 (n=100)
+
+Layer 20/20: projection.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.059827e-23 ± 4.353901e-24 (n=100)
+  MSE (with):    1.059827e-23 ± 4.353901e-24 (n=100)
+
+============================================================
+Quadrant: Q2 (bits 8-15)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.782567e-15 ± 7.622747e-16 (n=100)
+  MSE (with):    4.782567e-15 ± 7.622747e-16 (n=100)
+
+Layer 2/20: fno_blocks.convs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.854474e-15 ± 4.866603e-16 (n=100)
+  MSE (with):    2.854474e-15 ± 4.866603e-16 (n=100)
+
+Layer 3/20: fno_blocks.convs.2
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 9.576157e-16 ± 2.388328e-16 (n=100)
+  MSE (with):    9.576157e-16 ± 2.388328e-16 (n=100)
+
+Layer 4/20: fno_blocks.convs.3
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.705238e-17 ± 2.261132e-17 (n=100)
+  MSE (with):    4.705238e-17 ± 2.261132e-17 (n=100)
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.160234e-15 ± 6.976016e-16 (n=100)
+  MSE (with):    3.160234e-15 ± 6.976016e-16 (n=100)
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 9.219810e-16 ± 2.976049e-16 (n=100)
+  MSE (with):    9.219810e-16 ± 2.976049e-16 (n=100)
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.859200e-16 ± 8.532359e-17 (n=100)
+  MSE (with):    2.859200e-16 ± 8.532359e-17 (n=100)
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.366542e-17 ± 1.104573e-17 (n=100)
+  MSE (with):    1.366542e-17 ± 1.104573e-17 (n=100)
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.127191e-14 ± 6.078569e-16 (n=100)
+  MSE (with):    1.127191e-14 ± 6.078569e-16 (n=100)
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.343565e-14 ± 9.668636e-16 (n=100)
+  MSE (with):    1.343565e-14 ± 9.668636e-16 (n=100)
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 6.569877e-15 ± 7.912273e-16 (n=100)
+  MSE (with):    6.569877e-15 ± 7.912273e-16 (n=100)
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.109593e-14 ± 1.376532e-15 (n=100)
+  MSE (with):    1.109593e-14 ± 1.376532e-15 (n=100)
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.904956e-15 ± 4.109928e-16 (n=100)
+  MSE (with):    1.904956e-15 ± 4.109928e-16 (n=100)
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 6.283365e-15 ± 1.277949e-15 (n=100)
+  MSE (with):    6.283365e-15 ± 1.277949e-15 (n=100)
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 7.880091e-17 ± 3.565107e-17 (n=100)
+  MSE (with):    7.880091e-17 ± 3.565107e-17 (n=100)
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.810275e-16 ± 7.920314e-17 (n=100)
+  MSE (with):    1.810275e-16 ± 7.920314e-17 (n=100)
+
+Layer 17/20: lifting.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 9.166319e-15 ± 1.447743e-15 (n=100)
+  MSE (with):    9.166319e-15 ± 1.447743e-15 (n=100)
+
+Layer 18/20: lifting.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.825678e-14 ± 1.250126e-15 (n=100)
+  MSE (with):    1.825678e-14 ± 1.250126e-15 (n=100)
+
+Layer 19/20: projection.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 6.851746e-16 ± 3.840740e-16 (n=100)
+  MSE (with):    6.839636e-16 ± 3.811376e-16 (n=100)
+
+Layer 20/20: projection.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 7.039191e-19 ± 2.854252e-19 (n=100)
+  MSE (with):    7.039191e-19 ± 2.854252e-19 (n=100)
+
+============================================================
+Quadrant: Q3 (bits 16-23)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 8.416539e-14 ± 1.497370e-14 (n=100)
+  MSE (with):    8.416539e-14 ± 1.497370e-14 (n=100)
+
+Layer 2/20: fno_blocks.convs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.311988e-13 ± 3.456680e-14 (n=100)
+  MSE (with):    1.304308e-13 ± 3.452580e-14 (n=100)
+
+Layer 3/20: fno_blocks.convs.2
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.787380e-13 ± 4.484887e-14 (n=100)
+  MSE (with):    1.773216e-13 ± 4.459681e-14 (n=100)
+
+Layer 4/20: fno_blocks.convs.3
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.194179e-13 ± 1.843506e-13 (n=100)
+  MSE (with):    2.860036e-13 ± 1.531384e-13 (n=100)
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.728636e-14 ± 9.511781e-15 (n=100)
+  MSE (with):    4.596720e-14 ± 8.680641e-15 (n=100)
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.357000e-14 ± 7.146724e-15 (n=100)
+  MSE (with):    3.356308e-14 ± 7.145031e-15 (n=100)
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.996313e-14 ± 1.008500e-14 (n=100)
+  MSE (with):    3.996313e-14 ± 1.008500e-14 (n=100)
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.389532e-14 ± 1.389188e-14 (n=100)
+  MSE (with):    2.292653e-14 ± 1.370074e-14 (n=100)
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.497877e-13 ± 5.193437e-14 (n=100)
+  MSE (with):    2.182506e-13 ± 3.805399e-14 (n=100)
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 7.518384e-13 ± 3.126758e-13 (n=100)
+  MSE (with):    4.805592e-13 ± 1.202721e-13 (n=100)
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.615094e-13 ± 8.698246e-14 (n=100)
+  MSE (with):    3.331453e-13 ± 7.548978e-14 (n=100)
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.187559e-12 ± 4.614774e-13 (n=100)
+  MSE (with):    8.895411e-13 ± 1.946735e-13 (n=100)
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 5.674982e-13 ± 2.636442e-13 (n=100)
+  MSE (with):    3.784386e-13 ± 9.310748e-14 (n=100)
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 6.602357e-12 ± 6.739057e-12 (n=100)
+  MSE (with):    2.618090e-12 ± 9.834926e-13 (n=100)
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 7.449302e-13 ± 3.422874e-13 (n=100)
+  MSE (with):    5.292264e-13 ± 2.202914e-13 (n=100)
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 1.660070e-11 ± 1.205656e-11 (n=100)
+  MSE (with):    6.308647e-12 ± 2.887479e-12 (n=100)
+
+Layer 17/20: lifting.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 2.882287e-13 ± 1.097874e-13 (n=100)
+  MSE (with):    2.781479e-13 ± 9.832191e-14 (n=100)
+
+Layer 18/20: lifting.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 4.136831e-13 ± 1.102208e-13 (n=100)
+  MSE (with):    4.127844e-13 ± 1.103738e-13 (n=100)
+
+Layer 19/20: projection.fcs.0
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 6.558391e-11 ± 3.548265e-11 (n=100)
+  MSE (with):    2.849716e-11 ± 1.136915e-11 (n=100)
+
+Layer 20/20: projection.fcs.1
+  NaNs: Without=0, With=0, Reduced=0
+  MSE (without): 3.773579e-14 ± 1.332865e-14 (n=100)
+  MSE (with):    3.773579e-14 ± 1.332865e-14 (n=100)
+
+============================================================
+Quadrant: Q4 (bits 24-31)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  NaNs: Without=87, With=0, Reduced=87
+  MSE (without): 5.166012e-13 ± 1.033484e-13 (n=13)
+  MSE (with):    5.170165e-13 ± 5.179283e-14 (n=100)
+
+Layer 2/20: fno_blocks.convs.1
+  NaNs: Without=100, With=0, Reduced=100
+  MSE (without): nan ± nan (n=0)
+  MSE (with):    9.234706e-13 ± 1.079118e-13 (n=100)
+
+Layer 3/20: fno_blocks.convs.2
+  NaNs: Without=97, With=0, Reduced=97
+  MSE (without): 2.274325e-12 ± 8.289374e-14 (n=3)
+  MSE (with):    1.430862e-12 ± 1.924474e-13 (n=100)
+
+Layer 4/20: fno_blocks.convs.3
+  NaNs: Without=100, With=0, Reduced=100
+  MSE (without): nan ± nan (n=0)
+  MSE (with):    7.107560e-12 ± 2.008923e-12 (n=100)
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  NaNs: Without=98, With=0, Reduced=98
+  MSE (without): 6.241978e-13 ± 2.800963e-13 (n=2)
+  MSE (with):    2.786195e-13 ± 2.763976e-14 (n=100)
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  NaNs: Without=96, With=0, Reduced=96
+  MSE (without): 5.331035e-13 ± 2.787557e-13 (n=4)
+  MSE (with):    2.166195e-13 ± 2.086733e-14 (n=100)
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  NaNs: Without=97, With=0, Reduced=97
+  MSE (without): 9.544148e-13 ± 6.053548e-13 (n=3)
+  MSE (with):    3.516142e-13 ± 4.211185e-14 (n=100)
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  NaNs: Without=100, With=0, Reduced=100
+  MSE (without): nan ± nan (n=0)
+  MSE (with):    3.775804e-13 ± 8.861436e-14 (n=100)
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  NaNs: Without=99, With=0, Reduced=99
+  MSE (without): 3.774187e-12 ± 0.000000e+00 (n=1)
+  MSE (with):    1.469269e-12 ± 1.507216e-13 (n=100)
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  NaNs: Without=99, With=0, Reduced=99
+  MSE (without): 1.016824e-09 ± 0.000000e+00 (n=1)
+  MSE (with):    3.831759e-12 ± 6.602331e-13 (n=100)
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  NaNs: Without=88, With=0, Reduced=88
+  MSE (without): 4.451044e-12 ± 8.721070e-13 (n=12)
+  MSE (with):    3.436821e-12 ± 6.537237e-13 (n=100)
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  NaNs: Without=99, With=0, Reduced=99
+  MSE (without): 1.844983e-11 ± 0.000000e+00 (n=1)
+  MSE (with):    1.990350e-11 ± 1.039509e-11 (n=100)
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  NaNs: Without=98, With=0, Reduced=98
+  MSE (without): 7.023259e-11 ± 6.555668e-11 (n=2)
+  MSE (with):    4.860072e-12 ± 7.771919e-13 (n=100)
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  NaNs: Without=98, With=0, Reduced=98
+  MSE (without): 7.839245e-10 ± 6.273780e-10 (n=2)
+  MSE (with):    5.976387e-11 ± 1.571254e-11 (n=100)
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  NaNs: Without=74, With=0, Reduced=74
+  MSE (without): 7.878897e-11 ± 1.229117e-10 (n=26)
+  MSE (with):    1.725741e-11 ± 3.768320e-12 (n=100)
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  NaNs: Without=100, With=0, Reduced=100
+  MSE (without): nan ± nan (n=0)
+  MSE (with):    2.075285e-10 ± 6.057157e-11 (n=100)
+
+Layer 17/20: lifting.fcs.0
+  NaNs: Without=97, With=0, Reduced=97
+  MSE (without): 2.383678e-12 ± 6.260630e-13 (n=3)
+  MSE (with):    2.305004e-12 ± 5.396100e-13 (n=100)
+
+Layer 18/20: lifting.fcs.1
+  NaNs: Without=100, With=0, Reduced=100
+  MSE (without): nan ± nan (n=0)
+  MSE (with):    8.368478e-12 ± 2.460292e-12 (n=100)
+
+Layer 19/20: projection.fcs.0
+  NaNs: Without=95, With=0, Reduced=95
+  MSE (without): 1.390755e-08 ± 1.295997e-08 (n=5)
+  MSE (with):    7.243762e-10 ± 1.631845e-10 (n=100)
+
+Layer 20/20: projection.fcs.1
+  NaNs: Without=100, With=0, Reduced=100
+  MSE (without): nan ± nan (n=0)
+  MSE (with):    1.192864e-12 ± 1.982095e-13 (n=100)
+
+Plot saved to: plots_sloshing/activation_clipping_analysis.png
+
+================================================================================
+SUMMARY: NaN REDUCTION AND MSE IMPACT
+================================================================================
+
+Quadrant             NaN%       →     NaN%       Saved%     MSE (no clip)   MSE (clip)     
+--------------------------------------------------------------------------------
+Q1 (bits 0-7)            0.0%  →         0.0%      0.0%   1.150970e-15   1.150970e-15
+Q2 (bits 8-15)           0.0%  →         0.0%      0.0%   4.597700e-15   4.597640e-15
+Q3 (bits 16-23)          0.0%  →         0.0%      0.0%   4.712399e-12   2.090104e-12
+Q4 (bits 24-31)         96.1%  →         0.0%     96.1%   9.540255e-10   5.327486e-11
+================================================================================
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
