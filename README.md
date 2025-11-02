@@ -81,5 +81,9 @@ make activationClipping
 
 Plots and logs from the original runs are saved in the respective folders.
 
+### Data for Sloshing FNO Runs
+
+Data and Checkpoints for Sloshing FNO Runs are uploaded [here](https://drive.google.com/drive/folders/1Zw2MBFpyYQfSYnrTh8N3xwRG0jqd3XU6?usp=drive_link) due to space constraints.
+
 
 
