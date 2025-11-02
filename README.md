@@ -69,7 +69,7 @@ make tmr_implementation
 
 **Collect Max Activation** — Estimate the maximum activation values per layer (required for Activation Clipping):
 ```
-make activationClipping
+make collectMaxActivation
 ```
 
 **Activation Clipping** — Run the Activation Clipping code:
