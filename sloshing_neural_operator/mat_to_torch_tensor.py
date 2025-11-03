@@ -4,9 +4,10 @@ import glob
 import os
 
 # --- Configuration ---
-DATA_PATH = './FNO_Dataset/'
-NEW_PATH = './FNO_Dataset_PT/' # New folder for PyTorch files
-DATA_KEY = 'velocity_field_5D' 
+DATA_PATH = './FNO_Dataset_6_Channel'
+NEW_PATH = f'{DATA_PATH}_PT' # New folder for PyTorch files
+DATA_KEY = 'model_data_5D'
+print(f"Saving to: {NEW_PATH}") 
 # ---------------------
 
 file_paths = glob.glob(f"{DATA_PATH}/FNO_dataset_run_*.mat")
