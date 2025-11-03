@@ -1,0 +1,24 @@
+Layer 0   : fno_blocks.convs.0 [Real]
+Layer 1   : fno_blocks.convs.0 [Imag]
+Layer 2   : fno_blocks.convs.1 [Real]
+Layer 3   : fno_blocks.convs.1 [Imag]
+Layer 4   : fno_blocks.convs.2 [Real]
+Layer 5   : fno_blocks.convs.2 [Imag]
+Layer 6   : fno_blocks.convs.3 [Real]
+Layer 7   : fno_blocks.convs.3 [Imag]
+Layer 8   : fno_blocks.fno_skips.0.conv
+Layer 9   : fno_blocks.fno_skips.1.conv
+Layer 10  : fno_blocks.fno_skips.2.conv
+Layer 11  : fno_blocks.fno_skips.3.conv
+Layer 12  : fno_blocks.channel_mlp.0.fcs.0
+Layer 13  : fno_blocks.channel_mlp.0.fcs.1
+Layer 14  : fno_blocks.channel_mlp.1.fcs.0
+Layer 15  : fno_blocks.channel_mlp.1.fcs.1
+Layer 16  : fno_blocks.channel_mlp.2.fcs.0
+Layer 17  : fno_blocks.channel_mlp.2.fcs.1
+Layer 18  : fno_blocks.channel_mlp.3.fcs.0
+Layer 19  : fno_blocks.channel_mlp.3.fcs.1
+Layer 20  : lifting.fcs.0
+Layer 21  : lifting.fcs.1
+Layer 22  : projection.fcs.0
+Layer 23  : projection.fcs.1

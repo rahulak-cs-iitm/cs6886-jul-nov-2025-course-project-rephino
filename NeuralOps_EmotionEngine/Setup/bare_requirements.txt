@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pytorchfi
+neuraloperator
+ipykernel
+# PyTorchALFI
+torch
+torchvision
+torchaudio

@@ -1,0 +1,65 @@
+
+MSE comparison plot saved to results_sloshing/tmr_mse_comparison.png
+
+================================================================================
+TRIPLE MODULAR REDUNDANCY (TMR) PROTECTION ANALYSIS (Sloshing FNO)
+Strategy: Protect ALL layers EXCEPT SpectralConv
+================================================================================
+
+### 1. FAULT SENSITIVITY (MSE) FOR ALL LAYERS ###
+
+Layer Type           Layer Name                                                   Avg MSE         Max MSE        
+-------------------------------------------------------------------------------------------------------------------
+lifting              lifting.fcs.0                                                3.850136e-10    1.496724e-09   
+lifting              lifting.fcs.1                                                2.484051e-09    9.925537e-09   
+projection           projection.fcs.0                                             9.719282e-07    3.874387e-06   
+projection           projection.fcs.1                                             6.767728e-05    2.703876e-04   
+skip                 fno_blocks.fno_skips.0.conv                                  8.337850e-12    3.150247e-11   
+skip                 fno_blocks.fno_skips.1.conv                                  2.715440e-11    1.072873e-10   
+skip                 fno_blocks.fno_skips.2.conv                                  1.176540e-10    4.655851e-10   
+skip                 fno_blocks.fno_skips.3.conv                                  2.985855e-10    1.182465e-09   
+channel_mlp          fno_blocks.channel_mlp.0.fcs.0                               5.843502e-11    2.276749e-10   
+channel_mlp          fno_blocks.channel_mlp.0.fcs.1                               5.097971e-10    2.023763e-09   
+channel_mlp          fno_blocks.channel_mlp.1.fcs.0                               2.252042e-09    8.915329e-09   
+channel_mlp          fno_blocks.channel_mlp.1.fcs.1                               6.851470e-09    2.664330e-08   
+channel_mlp          fno_blocks.channel_mlp.2.fcs.0                               4.158801e-08    1.661555e-07   
+channel_mlp          fno_blocks.channel_mlp.2.fcs.1                               1.893214e-08    7.562279e-08   
+channel_mlp          fno_blocks.channel_mlp.3.fcs.0                               4.416012e-08    1.761080e-07   
+channel_mlp          fno_blocks.channel_mlp.3.fcs.1                               1.140649e-08    4.160756e-08   
+spectral_conv        fno_blocks.convs.0 [Real]                                    3.498523e-15    6.898002e-15   
+spectral_conv        fno_blocks.convs.0 [Imag]                                    2.734477e-15    7.182597e-15   
+spectral_conv        fno_blocks.convs.1 [Real]                                    1.967246e-15    5.111882e-15   
+spectral_conv        fno_blocks.convs.1 [Imag]                                    1.294254e-15    2.898398e-15   
+spectral_conv        fno_blocks.convs.2 [Real]                                    2.676195e-15    8.826127e-15   
+spectral_conv        fno_blocks.convs.2 [Imag]                                    1.678301e-15    5.756222e-15   
+spectral_conv        fno_blocks.convs.3 [Real]                                    6.781960e-16    2.115875e-15   
+spectral_conv        fno_blocks.convs.3 [Imag]                                    1.415610e-15    5.063725e-15   
+
+================================================================================
+### 2. TMR MEMORY OVERHEAD ANALYSIS ###
+================================================================================
+
+--- Parameter Breakdown ---
+Total Model Parameters:                    18,887,843
+  Lifting:                                      2,528
+  Projection:                                   2,307
+  Skip Connections:                             4,224
+  Channel MLP:                                  4,288
+  SpectralConv:                            18,874,496
+
+--- TMR Protection ---
+Parameters Protected (non-spectral):           13,347
+Parameters Left Unprotected:               18,874,496 (SpectralConv)
+
+--- TMR Implementation Overhead ---
+TMR Copies (3x replication):                   40,041
+
+--- Memory Savings: Full vs Selective ---
+Full Model TMR (3x all params):            56,663,529
+Selective TMR (non-spectral only):             40,041
+Selective vs Full:                               0.07%
+
+Memory Savings:                                 99.93%
+
+================================================================================
+================================================================================

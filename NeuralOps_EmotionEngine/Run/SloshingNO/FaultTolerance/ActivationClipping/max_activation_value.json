@@ -1,0 +1,27 @@
+{
+  "global_max_activation": 1.1369608640670776,
+  "num_samples_analyzed": 100,
+  "model_path": "../../../../Checkpoints/Sloshing/sloshing_fno_state_dict.pt",
+  "layer_max_activations": {
+    "lifting.fcs.0": 1.1369608640670776,
+    "lifting.fcs.1": 0.4525018334388733,
+    "fno_blocks.fno_skips.0.conv": 0.24911700189113617,
+    "fno_blocks.convs.0": 0.5685226321220398,
+    "fno_blocks.channel_mlp.0.fcs.0": 0.3027639091014862,
+    "fno_blocks.channel_mlp.0.fcs.1": 0.25600960850715637,
+    "fno_blocks.fno_skips.1.conv": 0.12275940179824829,
+    "fno_blocks.convs.1": 0.578866720199585,
+    "fno_blocks.channel_mlp.1.fcs.0": 0.3563739061355591,
+    "fno_blocks.channel_mlp.1.fcs.1": 0.2652859389781952,
+    "fno_blocks.fno_skips.2.conv": 0.12539416551589966,
+    "fno_blocks.convs.2": 0.4574877619743347,
+    "fno_blocks.channel_mlp.2.fcs.0": 0.19883699715137482,
+    "fno_blocks.channel_mlp.2.fcs.1": 0.2773749828338623,
+    "fno_blocks.fno_skips.3.conv": 0.10341999679803848,
+    "fno_blocks.convs.3": 0.4405354857444763,
+    "fno_blocks.channel_mlp.3.fcs.0": 0.2520458698272705,
+    "fno_blocks.channel_mlp.3.fcs.1": 0.25997278094291687,
+    "projection.fcs.0": 0.25556087493896484,
+    "projection.fcs.1": 0.0005495426012203097
+  }
+}
