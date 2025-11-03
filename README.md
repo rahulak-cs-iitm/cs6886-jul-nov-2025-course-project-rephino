@@ -31,19 +31,40 @@ However, the solver described above doesn't provide a way to obtain the final ve
 
 ### Contribution
 
-The tools available today (November, 2025) aren't capable of instantaneous inferencing of velocity fields given a forcing function. Using Fourier Neural Operators [Li et al.](https://doi.org/10.48550/arXiv.2010.08895), I have designed and trained a model that can inference the velocity fields in an autoregressive manner for a cylindrical tank containing water and under a constant gravitational field, experiencing a time varying lateral acceleration. Further improvements can be made by training the model on more diverse data.
+The tools available today (November, 2025) aren't capable of instantaneous inferencing of velocity fields given a forcing function. Using Fourier Neural Operators ([Li et al.](https://doi.org/10.48550/arXiv.2010.08895)), I have designed and trained a model that can inference the velocity fields in an autoregressive manner for a cylindrical tank containing water and under a constant gravitational field, experiencing a time varying lateral acceleration. Further improvements can be made by training the model on more diverse data.
 
 
 ### Files
 
 The [sloshing_neural_operator](/sloshing_neural_operator/) directory has several files. The important ones and their purpose are given below. Instructions to use them are given in the next section.
 
+- `environment.yml`: This is the file containing all dependencies for code in the [sloshing_neural_operator](/sloshing_neural_operator/) to run.
 - `neuraloperator`: This is the submodule containing the neural operators designed by _Li et al._
 - `best_model.pt`: This is the checkpoint of the best model, containing the model state along with the optimizer and LR schedular states to continue training if desired.
 - `evaluate_4_channel.ipynb`: This is the notebook that allows for easy evaluation of the model performance, along with somme visualizations.
 - `mat_to_torch_tensor.py`: This is the file that allows for converting `.mat` data files obtained from MATLAB to `.pt` files that store torch tensors.
 - `sloshing_neural_op_training_4_channels.py`: This is the training script for training a neural operator from scratch.
 - `test_paths.txt`: This contains the various various test files. Required by `evaluate_4_channel.ipynb`.
+
+### Running the Evaluation
+
+First navigate to the directory containing the model.
+```
+cd sloshing_neural_operator
+```
+
+
+Then replicate the conda environment.
+```
+conda env create -f environment.yml
+```
+
+Activate the environment.
+```
+conda activate fno_env
+```
+
+Once this is done, open `evaluate_4_channel.ipynb` and follow the instructions there to test the model.
 
 ## 2. NeuralOps_EmotionEngine
 
