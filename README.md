@@ -64,7 +64,7 @@ Activate the environment.
 conda activate fno_env
 ```
 
-Once this is done, open `evaluate_4_channel.ipynb` and follow the instructions there to test the model.
+Once this is done, open `evaluate_4_channel.ipynb` and follow the instructions there to test the model. **Only the last cell needs to be changed to obtain the evaluation results.**
 
 ## 2. NeuralOps_EmotionEngine
 
