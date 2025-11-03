@@ -1,0 +1,3 @@
+[submodule "sloshing_neural_operator/neuraloperator"]
+	path = sloshing_neural_operator/neuraloperator
+	url = https://github.com/neuraloperator/neuraloperator.git
