@@ -1,0 +1,1169 @@
+Running on device: cuda
+Loading data from: ../../../../../Data/Sloshing  
+Full data sequence shape: torch.Size([202, 3, 32, 32, 32])  
+
+Configuration:
+  Trials per layer per quadrant: 100
+  Test samples: 50
+  Multi-Bit Upset (MBU) Distribution:
+    2-bit: 60%
+    3-bit: 20%
+    4-bit: 10%
+    5-bit: 10%
+  Bit Quadrants:
+    Q1 (bits 0-7): [0, 1, 2, 3, 4, 5, 6, 7]
+    Q2 (bits 8-15): [8, 9, 10, 11, 12, 13, 14, 15]
+    Q3 (bits 16-23): [16, 17, 18, 19, 20, 21, 22, 23]
+    Q4 (bits 24-31): [24, 25, 26, 27, 28, 29, 30, 31]
+
+============================================================
+STARTING MULTI-BIT WEIGHT FAULT INJECTION BY QUADRANT
+============================================================
+
+============================================================
+MULTI-BIT WEIGHT FAULT INJECTION - BY BIT QUADRANT
+============================================================
+MBU Distribution: 2-bit (60%), 3-bit (20%), 4-bit (10%), 5-bit (10%)
+
+Found 24 injectable layer components
+(SpectralConv layers counted twice: Real and Imaginary components)
+
+Collecting baseline (fault-free) outputs...
+Collected 50 baseline outputs
+
+============================================================
+Processing Quadrant: Q1 (bits 0-7)
+============================================================
+
+Layer 1/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=56, 3=21, 4=14, 5=9
+  Mean MSE: 4.713678e-16 ± 6.292304e-16
+
+Layer 2/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=24, 4=7, 5=11
+  Mean MSE: 3.742210e-16 ± 5.859749e-16
+
+Layer 3/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=63, 3=18, 4=11, 5=8
+  Mean MSE: 2.000959e-16 ± 3.583148e-16
+
+Layer 4/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=47, 3=27, 4=17, 5=9
+  Mean MSE: 1.962226e-16 ± 3.708328e-16
+
+Layer 5/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=21, 4=11, 5=8
+  Mean MSE: 1.130353e-17 ± 3.800027e-17
+
+Layer 6/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=18, 4=13, 5=9
+  Mean MSE: 1.064160e-17 ± 3.060511e-17
+
+Layer 7/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=68, 3=16, 4=12, 5=4
+  Mean MSE: 3.461335e-22 ± 3.416843e-21
+
+Layer 8/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=69, 3=13, 4=7, 5=11
+  Mean MSE: 8.953301e-21 ± 8.895329e-20
+
+Layer 9/24: fno_blocks.fno_skips.0.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=16, 4=13, 5=9
+  Mean MSE: 1.877196e-15 ± 2.599127e-16
+
+Layer 10/24: fno_blocks.fno_skips.1.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=19, 4=11, 5=12
+  Mean MSE: 1.661261e-15 ± 3.330802e-16
+
+Layer 11/24: fno_blocks.fno_skips.2.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=67, 3=16, 4=7, 5=10
+  Mean MSE: 1.085534e-15 ± 5.150495e-16
+
+Layer 12/24: fno_blocks.fno_skips.3.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=63, 3=18, 4=8, 5=11
+  Mean MSE: 4.210232e-16 ± 5.672592e-16
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=15, 4=9, 5=11
+  Mean MSE: 1.947715e-15 ± 3.038805e-16
+
+Layer 14/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=17, 4=9, 5=17
+  Mean MSE: 1.995652e-15 ± 6.585577e-16
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=20, 4=6, 5=10
+  Mean MSE: 1.874115e-15 ± 5.141859e-16
+
+Layer 16/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=61, 3=18, 4=9, 5=12
+  Mean MSE: 1.761695e-15 ± 7.013401e-16
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=30, 4=7, 5=6
+  Mean MSE: 1.785332e-15 ± 1.716668e-15
+
+Layer 18/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=19, 4=9, 5=7
+  Mean MSE: 1.027381e-15 ± 7.413155e-16
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=61, 3=19, 4=12, 5=8
+  Mean MSE: 2.771182e-15 ± 5.557213e-15
+
+Layer 20/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=16, 4=11, 5=8
+  Mean MSE: 7.624139e-16 ± 2.428902e-15
+
+Layer 21/24: lifting.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=67, 3=15, 4=10, 5=8
+  Mean MSE: 1.971935e-15 ± 2.733095e-15
+
+Layer 22/24: lifting.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=66, 3=17, 4=7, 5=10
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 23/24: projection.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=14, 4=15, 5=6
+  Mean MSE: 0.000000e+00 ± 0.000000e+00
+
+Layer 24/24: projection.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=22, 4=11, 5=12
+  Mean MSE: 1.202133e-16 ± 4.185179e-16
+
+============================================================
+Processing Quadrant: Q2 (bits 8-15)
+============================================================
+
+Layer 1/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=25, 4=11, 5=9
+  Mean MSE: 1.537309e-15 ± 4.569430e-16
+
+Layer 2/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=17, 4=14, 5=9
+  Mean MSE: 1.518818e-15 ± 4.668617e-16
+
+Layer 3/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=53, 3=28, 4=12, 5=7
+  Mean MSE: 9.920665e-16 ± 4.699218e-16
+
+Layer 4/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=53, 3=23, 4=14, 5=10
+  Mean MSE: 9.502417e-16 ± 4.888115e-16
+
+Layer 5/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=20, 4=9, 5=9
+  Mean MSE: 1.461296e-16 ± 2.160604e-16
+
+Layer 6/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=21, 4=8, 5=9
+  Mean MSE: 1.981754e-16 ± 3.300115e-16
+
+Layer 7/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=17, 4=13, 5=6
+  Mean MSE: 3.101507e-17 ± 2.372608e-16
+
+Layer 8/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=20, 4=10, 5=10
+  Mean MSE: 2.160391e-18 ± 1.193183e-17
+
+Layer 9/24: fno_blocks.fno_skips.0.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=52, 3=27, 4=11, 5=10
+  Mean MSE: 9.212267e-15 ± 1.602527e-14
+
+Layer 10/24: fno_blocks.fno_skips.1.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=56, 3=25, 4=6, 5=13
+  Mean MSE: 1.159842e-14 ± 2.257749e-14
+
+Layer 11/24: fno_blocks.fno_skips.2.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=53, 3=19, 4=14, 5=14
+  Mean MSE: 4.980134e-14 ± 7.774494e-14
+
+Layer 12/24: fno_blocks.fno_skips.3.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=19, 4=8, 5=13
+  Mean MSE: 1.444896e-13 ± 2.100960e-13
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=71, 3=15, 4=6, 5=8
+  Mean MSE: 6.170352e-14 ± 9.251613e-14
+
+Layer 14/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=61, 3=22, 4=6, 5=11
+  Mean MSE: 3.007546e-14 ± 5.192758e-14
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=27, 4=7, 5=6
+  Mean MSE: 7.448874e-14 ± 9.608696e-14
+
+Layer 16/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=16, 4=10, 5=12
+  Mean MSE: 8.922362e-14 ± 1.772174e-13
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=21, 4=10, 5=5
+  Mean MSE: 1.945721e-13 ± 3.678686e-13
+
+Layer 18/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=16, 4=9, 5=10
+  Mean MSE: 9.605073e-14 ± 2.429175e-13
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=22, 4=10, 5=9
+  Mean MSE: 1.064781e-12 ± 1.883466e-12
+
+Layer 20/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=53, 3=21, 4=16, 5=10
+  Mean MSE: 2.633412e-13 ± 5.261892e-13
+
+Layer 21/24: lifting.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=25, 4=5, 5=10
+  Mean MSE: 1.698700e-13 ± 3.745104e-13
+
+Layer 22/24: lifting.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=20, 4=8, 5=12
+  Mean MSE: 6.261993e-14 ± 1.236962e-13
+
+Layer 23/24: projection.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=67, 3=16, 4=8, 5=9
+  Mean MSE: 2.765817e-13 ± 7.102027e-13
+
+Layer 24/24: projection.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=26, 4=10, 5=9
+  Mean MSE: 2.427013e-11 ± 6.177127e-11
+
+============================================================
+Processing Quadrant: Q3 (bits 16-23)
+============================================================
+
+Layer 1/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=14, 4=8, 5=14
+  Mean MSE: 3.611212e-15 ± 1.207996e-14
+
+Layer 2/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=22, 4=7, 5=7
+  Mean MSE: 2.034659e-15 ± 1.364554e-15
+
+Layer 3/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=14, 4=11, 5=11
+  Mean MSE: 2.107799e-15 ± 2.955771e-15
+
+Layer 4/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=23, 4=11, 5=11
+  Mean MSE: 2.925611e-15 ± 1.189627e-14
+
+Layer 5/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=16, 4=11, 5=8
+  Mean MSE: 2.860275e-15 ± 1.634064e-14
+
+Layer 6/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=23, 4=12, 5=6
+  Mean MSE: 6.339775e-15 ± 3.588696e-14
+
+Layer 7/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=21, 4=11, 5=14
+  Mean MSE: 2.847866e-14 ± 2.729473e-13
+
+Layer 8/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=25, 4=9, 5=12
+  Mean MSE: 8.099485e-16 ± 2.820045e-15
+
+Layer 9/24: fno_blocks.fno_skips.0.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=63, 3=23, 4=5, 5=9
+  Mean MSE: 2.825902e-12 ± 7.185632e-12
+
+Layer 10/24: fno_blocks.fno_skips.1.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=56, 3=30, 4=7, 5=7
+  Mean MSE: 4.783513e-12 ± 1.589757e-11
+
+Layer 11/24: fno_blocks.fno_skips.2.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=15, 4=10, 5=17
+  Mean MSE: 1.459092e-11 ± 3.906770e-11
+
+Layer 12/24: fno_blocks.fno_skips.3.conv
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=18, 4=7, 5=11
+  Mean MSE: 8.049626e-11 ± 2.883079e-10
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=19, 4=9, 5=12
+  Mean MSE: 2.830103e-11 ± 1.178733e-10
+
+Layer 14/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=53, 3=25, 4=13, 5=9
+  Mean MSE: 5.208382e-11 ± 1.486310e-10
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=25, 4=12, 5=8
+  Mean MSE: 8.357585e-11 ± 3.030558e-10
+
+Layer 16/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=20, 4=8, 5=10
+  Mean MSE: 4.498062e-10 ± 1.692316e-09
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=21, 4=12, 5=9
+  Mean MSE: 3.771225e-10 ± 1.206655e-09
+
+Layer 18/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=66, 3=17, 4=8, 5=9
+  Mean MSE: 4.143593e-10 ± 9.948008e-10
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=18, 4=13, 5=15
+  Mean MSE: 4.755548e-09 ± 2.526050e-08
+
+Layer 20/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=19, 4=11, 5=8
+  Mean MSE: 2.400058e-09 ± 7.483156e-09
+
+Layer 21/24: lifting.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=73, 3=15, 4=4, 5=8
+  Mean MSE: 1.187845e-10 ± 3.680325e-10
+
+Layer 22/24: lifting.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=27, 4=11, 5=5
+  Mean MSE: 5.633497e-11 ± 2.168293e-10
+
+Layer 23/24: projection.fcs.0
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=25, 4=8, 5=5
+  Mean MSE: 1.487977e-07 ± 7.544274e-07
+
+Layer 24/24: projection.fcs.1
+  Type: real
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=19, 4=5, 5=11
+  Mean MSE: 5.313747e-07 ± 1.205742e-06
+
+============================================================
+Processing Quadrant: Q4 (bits 24-31)
+============================================================
+
+Layer 1/24: fno_blocks.convs.0 [Real]
+  Type: complex_real
+  Valid: 75/100, NaN Rate: 25.0%
+  Bit count dist: 2=52, 3=21, 4=11, 5=16
+  Mean MSE: 5.169469e+30 ± 4.446694e+31
+
+Layer 2/24: fno_blocks.convs.0 [Imag]
+  Type: complex_imag
+  Valid: 79/100, NaN Rate: 21.0%
+  Bit count dist: 2=62, 3=20, 4=12, 5=6
+  Mean MSE: 4.635556e+25 ± 4.094012e+26
+
+Layer 3/24: fno_blocks.convs.1 [Real]
+  Type: complex_real
+  Valid: 81/100, NaN Rate: 19.0%
+  Bit count dist: 2=68, 3=17, 4=12, 5=3
+  Mean MSE: 2.520951e+28 ± 2.254807e+29
+
+Layer 4/24: fno_blocks.convs.1 [Imag]
+  Type: complex_imag
+  Valid: 74/100, NaN Rate: 26.0%
+  Bit count dist: 2=55, 3=22, 4=11, 5=12
+  Mean MSE: 4.637441e+26 ± 3.314782e+27
+
+Layer 5/24: fno_blocks.convs.2 [Real]
+  Type: complex_real
+  Valid: 79/100, NaN Rate: 21.0%
+  Bit count dist: 2=60, 3=23, 4=7, 5=10
+  Mean MSE: 3.489628e+30 ± 2.173749e+31
+
+Layer 6/24: fno_blocks.convs.2 [Imag]
+  Type: complex_imag
+  Valid: 84/100, NaN Rate: 16.0%
+  Bit count dist: 2=58, 3=18, 4=11, 5=13
+  Mean MSE: 2.201600e+30 ± 2.001170e+31
+
+Layer 7/24: fno_blocks.convs.3 [Real]
+  Type: complex_real
+  Valid: 81/100, NaN Rate: 19.0%
+  Bit count dist: 2=65, 3=17, 4=10, 5=8
+  Mean MSE: 2.914925e+27 ± 2.357058e+28
+
+Layer 8/24: fno_blocks.convs.3 [Imag]
+  Type: complex_imag
+  Valid: 79/100, NaN Rate: 21.0%
+  Bit count dist: 2=63, 3=14, 4=10, 5=13
+  Mean MSE: 3.114679e+27 ± 2.471449e+28
+
+Layer 9/24: fno_blocks.fno_skips.0.conv
+  Type: real
+  Valid: 83/100, NaN Rate: 17.0%
+  Bit count dist: 2=52, 3=25, 4=6, 5=17
+  Mean MSE: 6.137585e+28 ± 3.931140e+29
+
+Layer 10/24: fno_blocks.fno_skips.1.conv
+  Type: real
+  Valid: 89/100, NaN Rate: 11.0%
+  Bit count dist: 2=65, 3=18, 4=8, 5=9
+  Mean MSE: 3.535474e+26 ± 3.093341e+27
+
+Layer 11/24: fno_blocks.fno_skips.2.conv
+  Type: real
+  Valid: 90/100, NaN Rate: 10.0%
+  Bit count dist: 2=54, 3=21, 4=14, 5=11
+  Mean MSE: 2.566766e+28 ± 1.480461e+29
+
+Layer 12/24: fno_blocks.fno_skips.3.conv
+  Type: real
+  Valid: 76/100, NaN Rate: 24.0%
+  Bit count dist: 2=65, 3=21, 4=8, 5=6
+  Mean MSE: 4.678324e+29 ± 3.979362e+30
+
+Layer 13/24: fno_blocks.channel_mlp.0.fcs.0
+  Type: real
+  Valid: 82/100, NaN Rate: 18.0%
+  Bit count dist: 2=59, 3=17, 4=11, 5=13
+  Mean MSE: 2.521190e+30 ± 1.629866e+31
+
+Layer 14/24: fno_blocks.channel_mlp.0.fcs.1
+  Type: real
+  Valid: 84/100, NaN Rate: 16.0%
+  Bit count dist: 2=60, 3=14, 4=14, 5=12
+  Mean MSE: 5.890392e+30 ± 5.335197e+31
+
+Layer 15/24: fno_blocks.channel_mlp.1.fcs.0
+  Type: real
+  Valid: 86/100, NaN Rate: 14.0%
+  Bit count dist: 2=67, 3=12, 4=13, 5=8
+  Mean MSE: 2.156675e+28 ± 1.988356e+29
+
+Layer 16/24: fno_blocks.channel_mlp.1.fcs.1
+  Type: real
+  Valid: 89/100, NaN Rate: 11.0%
+  Bit count dist: 2=50, 3=23, 4=15, 5=12
+  Mean MSE: 3.574051e+30 ± 3.261903e+31
+
+Layer 17/24: fno_blocks.channel_mlp.2.fcs.0
+  Type: real
+  Valid: 83/100, NaN Rate: 17.0%
+  Bit count dist: 2=50, 3=25, 4=15, 5=10
+  Mean MSE: 3.779673e+29 ± 3.224774e+30
+
+Layer 18/24: fno_blocks.channel_mlp.2.fcs.1
+  Type: real
+  Valid: 86/100, NaN Rate: 14.0%
+  Bit count dist: 2=50, 3=22, 4=14, 5=14
+  Mean MSE: 5.485492e+29 ± 5.052132e+30
+
+Layer 19/24: fno_blocks.channel_mlp.3.fcs.0
+  Type: real
+  Valid: 86/100, NaN Rate: 14.0%
+  Bit count dist: 2=62, 3=24, 4=7, 5=7
+  Mean MSE: 7.649890e+29 ± 4.955308e+30
+
+Layer 20/24: fno_blocks.channel_mlp.3.fcs.1
+  Type: real
+  Valid: 76/100, NaN Rate: 24.0%
+  Bit count dist: 2=57, 3=20, 4=10, 5=13
+  Mean MSE: 7.882265e+31 ± 4.601654e+32
+
+Layer 21/24: lifting.fcs.0
+  Type: real
+  Valid: 85/100, NaN Rate: 15.0%
+  Bit count dist: 2=62, 3=19, 4=11, 5=8
+  Mean MSE: 3.478916e+26 ± 3.187005e+27
+
+Layer 22/24: lifting.fcs.1
+  Type: real
+  Valid: 72/100, NaN Rate: 28.0%
+  Bit count dist: 2=68, 3=18, 4=9, 5=5
+  Mean MSE: 2.698766e+28 ± 1.598984e+29
+
+Layer 23/24: projection.fcs.0
+  Type: real
+  Valid: 94/100, NaN Rate: 6.0%
+  Bit count dist: 2=65, 3=17, 4=8, 5=10
+  Mean MSE: 3.130328e+26 ± 2.278564e+27
+
+Layer 24/24: projection.fcs.1
+  Type: real
+  Valid: 75/100, NaN Rate: 25.0%
+  Bit count dist: 2=61, 3=15, 4=10, 5=14
+  Mean MSE: 2.103386e+31 ± 1.704821e+32
+
+Multi-bit weight results saved to multibit_weight_quadrant_summary.csv
+
+Quadrant comparison plot saved to: plots/multibit_quadrant_comparison_weight.png
+Real vs Complex comparison plot saved to: plots/multibit_real_vs_complex_comparison.png
+
+============================================================
+STARTING MULTI-BIT ACTIVATION FAULT INJECTION BY QUADRANT
+============================================================
+
+============================================================
+MULTI-BIT ACTIVATION FAULT INJECTION - BY BIT QUADRANT
+============================================================
+MBU Distribution: 2-bit (60%), 3-bit (20%), 4-bit (10%), 5-bit (10%)
+Note: All activations are real-valued (even after SpectralConv)
+
+Found 20 injectable layers
+
+Collecting baseline (fault-free) outputs...
+Collected 50 baseline outputs
+
+============================================================
+Processing Quadrant: Q1 (bits 0-7)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=21, 4=15, 5=10
+  Mean MSE: 1.497590e-15 ± 6.625663e-17
+
+Layer 2/20: fno_blocks.convs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=16, 4=17, 5=10
+  Mean MSE: 7.971109e-16 ± 5.929075e-17
+
+Layer 3/20: fno_blocks.convs.2
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=66, 3=23, 4=4, 5=7
+  Mean MSE: 7.427494e-17 ± 1.254377e-17
+
+Layer 4/20: fno_blocks.convs.3
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=23, 4=9, 5=6
+  Mean MSE: 4.647463e-19 ± 1.785848e-18
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=19, 4=8, 5=8
+  Mean MSE: 1.373645e-15 ± 7.824473e-17
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=15, 4=14, 5=6
+  Mean MSE: 5.585552e-16 ± 5.949820e-17
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=20, 4=9, 5=17
+  Mean MSE: 4.467523e-17 ± 9.312010e-18
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=18, 4=12, 5=16
+  Mean MSE: 1.208513e-19 ± 7.441991e-19
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=45, 3=21, 4=12, 5=22
+  Mean MSE: 1.589348e-15 ± 6.001515e-17
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=56, 3=24, 4=9, 5=11
+  Mean MSE: 1.572160e-15 ± 6.064212e-17
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=60, 3=16, 4=14, 5=10
+  Mean MSE: 9.186550e-16 ± 6.093633e-17
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=61, 3=19, 4=10, 5=10
+  Mean MSE: 9.808142e-16 ± 5.712626e-17
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=19, 4=17, 5=9
+  Mean MSE: 1.007227e-16 ± 1.621426e-17
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=17, 4=9, 5=12
+  Mean MSE: 1.676529e-16 ± 2.421879e-17
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=54, 3=24, 4=12, 5=10
+  Mean MSE: 7.298574e-19 ± 2.024448e-18
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=18, 4=6, 5=14
+  Mean MSE: 2.568128e-19 ± 1.073511e-18
+
+Layer 17/20: lifting.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=69, 3=13, 4=7, 5=11
+  Mean MSE: 1.275672e-17 ± 2.432148e-17
+
+Layer 18/20: lifting.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=26, 4=10, 5=6
+  Mean MSE: 1.859454e-15 ± 6.192748e-17
+
+Layer 19/20: projection.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=49, 3=27, 4=10, 5=14
+  Mean MSE: 2.576190e-20 ± 9.865798e-21
+
+Layer 20/20: projection.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=56, 3=21, 4=10, 5=13
+  Mean MSE: 2.854745e-23 ± 8.511252e-24
+
+============================================================
+Processing Quadrant: Q2 (bits 8-15)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=56, 3=23, 4=9, 5=12
+  Mean MSE: 1.851363e-15 ± 6.402131e-17
+
+Layer 2/20: fno_blocks.convs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=11, 4=11, 5=16
+  Mean MSE: 1.595548e-15 ± 7.210760e-17
+
+Layer 3/20: fno_blocks.convs.2
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=63, 3=19, 4=7, 5=11
+  Mean MSE: 9.821998e-16 ± 1.051264e-16
+
+Layer 4/20: fno_blocks.convs.3
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=13, 4=14, 5=11
+  Mean MSE: 1.022048e-16 ± 3.869364e-17
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=67, 3=16, 4=8, 5=9
+  Mean MSE: 1.771227e-15 ± 6.025157e-17
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=20, 4=9, 5=12
+  Mean MSE: 1.303089e-15 ± 6.410477e-17
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=16, 4=8, 5=11
+  Mean MSE: 4.887389e-16 ± 6.149271e-17
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=19, 4=14, 5=10
+  Mean MSE: 2.717957e-17 ± 1.379591e-17
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=20, 4=9, 5=13
+  Mean MSE: 2.078271e-15 ± 8.216521e-17
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=21, 4=8, 5=9
+  Mean MSE: 2.322903e-15 ± 1.099774e-16
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=22, 4=8, 5=8
+  Mean MSE: 2.029741e-15 ± 1.515334e-16
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=53, 3=19, 4=12, 5=16
+  Mean MSE: 2.753916e-15 ± 1.836702e-16
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=22, 4=9, 5=12
+  Mean MSE: 1.407527e-15 ± 1.348268e-16
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=19, 4=10, 5=9
+  Mean MSE: 3.091825e-15 ± 3.899744e-16
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=71, 3=14, 4=6, 5=9
+  Mean MSE: 1.494053e-16 ± 4.311977e-17
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=25, 4=7, 5=10
+  Mean MSE: 4.861052e-16 ± 1.859466e-16
+
+Layer 17/20: lifting.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=69, 3=15, 4=9, 5=7
+  Mean MSE: 1.648886e-15 ± 1.560552e-16
+
+Layer 18/20: lifting.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=20, 4=12, 5=10
+  Mean MSE: 2.260040e-15 ± 1.043208e-16
+
+Layer 19/20: projection.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=19, 4=12, 5=10
+  Mean MSE: 2.021085e-15 ± 8.859637e-16
+
+Layer 20/20: projection.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=12, 4=16, 5=7
+  Mean MSE: 1.778835e-18 ± 4.662479e-19
+
+============================================================
+Processing Quadrant: Q3 (bits 16-23)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=58, 3=28, 4=5, 5=9
+  Mean MSE: 2.782842e-14 ± 6.970851e-15
+
+Layer 2/20: fno_blocks.convs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=20, 4=11, 5=7
+  Mean MSE: 6.914335e-14 ± 1.547593e-14
+
+Layer 3/20: fno_blocks.convs.2
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=67, 3=16, 4=5, 5=12
+  Mean MSE: 1.663206e-13 ± 5.411171e-14
+
+Layer 4/20: fno_blocks.convs.3
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=62, 3=15, 4=7, 5=16
+  Mean MSE: 8.455155e-13 ± 3.141059e-13
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=16, 4=12, 5=7
+  Mean MSE: 1.142848e-14 ± 3.326533e-15
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=55, 3=24, 4=10, 5=11
+  Mean MSE: 1.031461e-14 ± 2.231103e-15
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=21, 4=13, 5=7
+  Mean MSE: 2.072346e-14 ± 4.213286e-15
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=22, 4=15, 5=6
+  Mean MSE: 7.153857e-14 ± 3.226231e-14
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=17, 4=15, 5=9
+  Mean MSE: 1.320694e-13 ± 3.577034e-14
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=70, 3=15, 4=8, 5=7
+  Mean MSE: 1.493392e-12 ± 8.702049e-13
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=17, 4=7, 5=12
+  Mean MSE: 2.821481e-13 ± 6.987988e-14
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=57, 3=25, 4=11, 5=7
+  Mean MSE: 2.614055e-12 ± 1.035275e-12
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=19, 4=12, 5=5
+  Mean MSE: 8.053541e-13 ± 4.124771e-13
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=50, 3=24, 4=15, 5=11
+  Mean MSE: 1.737270e-11 ± 1.174436e-11
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=52, 3=22, 4=13, 5=13
+  Mean MSE: 2.622462e-12 ± 1.118386e-12
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=63, 3=13, 4=9, 5=15
+  Mean MSE: 4.941103e-11 ± 2.779778e-11
+
+Layer 17/20: lifting.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=59, 3=19, 4=10, 5=12
+  Mean MSE: 3.508823e-13 ± 4.016239e-13
+
+Layer 18/20: lifting.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=64, 3=18, 4=10, 5=8
+  Mean MSE: 4.407695e-13 ± 2.708389e-13
+
+Layer 19/20: projection.fcs.0
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=65, 3=12, 4=14, 5=9
+  Mean MSE: 1.931512e-10 ± 1.005961e-10
+
+Layer 20/20: projection.fcs.1
+  Valid: 100/100, NaN Rate: 0.0%
+  Bit count dist: 2=71, 3=18, 4=6, 5=5
+  Mean MSE: 1.259510e-13 ± 3.242156e-14
+
+============================================================
+Processing Quadrant: Q4 (bits 24-31)
+============================================================
+
+Layer 1/20: fno_blocks.convs.0
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=46, 3=27, 4=15, 5=12
+
+Layer 2/20: fno_blocks.convs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=69, 3=22, 4=4, 5=5
+
+Layer 3/20: fno_blocks.convs.2
+  Valid: 1/100, NaN Rate: 99.0%
+  Bit count dist: 2=56, 3=30, 4=9, 5=5
+  Mean MSE: 6.852291e+27 ± 0.000000e+00
+
+Layer 4/20: fno_blocks.convs.3
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=55, 3=22, 4=12, 5=11
+
+Layer 5/20: fno_blocks.fno_skips.0.conv
+  Valid: 1/100, NaN Rate: 99.0%
+  Bit count dist: 2=48, 3=28, 4=11, 5=13
+  Mean MSE: 4.873206e+24 ± 0.000000e+00
+
+Layer 6/20: fno_blocks.fno_skips.1.conv
+  Valid: 1/100, NaN Rate: 99.0%
+  Bit count dist: 2=53, 3=24, 4=12, 5=11
+  Mean MSE: 1.336734e+13 ± 0.000000e+00
+
+Layer 7/20: fno_blocks.fno_skips.2.conv
+  Valid: 1/100, NaN Rate: 99.0%
+  Bit count dist: 2=59, 3=20, 4=10, 5=11
+  Mean MSE: 2.572272e+24 ± 0.000000e+00
+
+Layer 8/20: fno_blocks.fno_skips.3.conv
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=48, 3=22, 4=11, 5=19
+
+Layer 9/20: fno_blocks.channel_mlp.0.fcs.0
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=55, 3=19, 4=10, 5=16
+
+Layer 10/20: fno_blocks.channel_mlp.0.fcs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=55, 3=25, 4=10, 5=10
+
+Layer 11/20: fno_blocks.channel_mlp.1.fcs.0
+  Valid: 1/100, NaN Rate: 99.0%
+  Bit count dist: 2=54, 3=16, 4=13, 5=17
+  Mean MSE: 8.480332e+15 ± 0.000000e+00
+
+Layer 12/20: fno_blocks.channel_mlp.1.fcs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=50, 3=27, 4=8, 5=15
+
+Layer 13/20: fno_blocks.channel_mlp.2.fcs.0
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=58, 3=28, 4=9, 5=5
+
+Layer 14/20: fno_blocks.channel_mlp.2.fcs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=58, 3=25, 4=6, 5=11
+
+Layer 15/20: fno_blocks.channel_mlp.3.fcs.0
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=41, 3=27, 4=12, 5=20
+
+Layer 16/20: fno_blocks.channel_mlp.3.fcs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=55, 3=23, 4=11, 5=11
+
+Layer 17/20: lifting.fcs.0
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=54, 3=21, 4=16, 5=9
+
+Layer 18/20: lifting.fcs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=61, 3=22, 4=9, 5=8
+
+Layer 19/20: projection.fcs.0
+  Valid: 1/100, NaN Rate: 99.0%
+  Bit count dist: 2=55, 3=24, 4=11, 5=10
+  Mean MSE: 2.383350e+21 ± 0.000000e+00
+
+Layer 20/20: projection.fcs.1
+  Valid: 0/100, NaN Rate: 100.0%
+  Bit count dist: 2=56, 3=25, 4=10, 5=9
+
+Multi-bit activation results saved to multibit_activation_quadrant_summary.csv
+
+Quadrant comparison plot saved to: plots/multibit_quadrant_comparison_activation.png
+
+============================================================
+MULTI-BIT QUADRANT ANALYSIS SUMMARY
+============================================================
+
+--- Multi-Bit Weight Faults ---
+                         Layer  Q1 (bits 0-7)_MSE  Q1 (bits 0-7)_Std  Q1 (bits 0-7)_NaN%  Q2 (bits 8-15)_MSE  Q2 (bits 8-15)_Std  Q2 (bits 8-15)_NaN%  Q3 (bits 16-23)_MSE  Q3 (bits 16-23)_Std  Q3 (bits 16-23)_NaN%  Q4 (bits 24-31)_MSE  Q4 (bits 24-31)_Std  Q4 (bits 24-31)_NaN%
+     fno_blocks.convs.0 [Real]       4.713678e-16       6.292304e-16                 0.0        1.537309e-15        4.569430e-16                  0.0         3.611212e-15         1.207996e-14                   0.0         5.169469e+30         4.446694e+31                  25.0
+     fno_blocks.convs.0 [Imag]       3.742210e-16       5.859749e-16                 0.0        1.518818e-15        4.668617e-16                  0.0         2.034659e-15         1.364554e-15                   0.0         4.635556e+25         4.094012e+26                  21.0
+     fno_blocks.convs.1 [Real]       2.000959e-16       3.583148e-16                 0.0        9.920665e-16        4.699218e-16                  0.0         2.107799e-15         2.955771e-15                   0.0         2.520951e+28         2.254807e+29                  19.0
+     fno_blocks.convs.1 [Imag]       1.962226e-16       3.708328e-16                 0.0        9.502417e-16        4.888115e-16                  0.0         2.925611e-15         1.189627e-14                   0.0         4.637441e+26         3.314782e+27                  26.0
+     fno_blocks.convs.2 [Real]       1.130353e-17       3.800027e-17                 0.0        1.461296e-16        2.160604e-16                  0.0         2.860275e-15         1.634064e-14                   0.0         3.489628e+30         2.173749e+31                  21.0
+     fno_blocks.convs.2 [Imag]       1.064160e-17       3.060511e-17                 0.0        1.981754e-16        3.300115e-16                  0.0         6.339775e-15         3.588696e-14                   0.0         2.201600e+30         2.001170e+31                  16.0
+     fno_blocks.convs.3 [Real]       3.461335e-22       3.416843e-21                 0.0        3.101507e-17        2.372608e-16                  0.0         2.847866e-14         2.729473e-13                   0.0         2.914925e+27         2.357058e+28                  19.0
+     fno_blocks.convs.3 [Imag]       8.953301e-21       8.895329e-20                 0.0        2.160391e-18        1.193183e-17                  0.0         8.099485e-16         2.820045e-15                   0.0         3.114679e+27         2.471449e+28                  21.0
+   fno_blocks.fno_skips.0.conv       1.877196e-15       2.599127e-16                 0.0        9.212267e-15        1.602527e-14                  0.0         2.825902e-12         7.185632e-12                   0.0         6.137585e+28         3.931140e+29                  17.0
+   fno_blocks.fno_skips.1.conv       1.661261e-15       3.330802e-16                 0.0        1.159842e-14        2.257749e-14                  0.0         4.783513e-12         1.589757e-11                   0.0         3.535474e+26         3.093341e+27                  11.0
+   fno_blocks.fno_skips.2.conv       1.085534e-15       5.150495e-16                 0.0        4.980134e-14        7.774494e-14                  0.0         1.459092e-11         3.906770e-11                   0.0         2.566766e+28         1.480461e+29                  10.0
+   fno_blocks.fno_skips.3.conv       4.210232e-16       5.672592e-16                 0.0        1.444896e-13        2.100960e-13                  0.0         8.049626e-11         2.883079e-10                   0.0         4.678324e+29         3.979362e+30                  24.0
+fno_blocks.channel_mlp.0.fcs.0       1.947715e-15       3.038805e-16                 0.0        6.170352e-14        9.251613e-14                  0.0         2.830103e-11         1.178733e-10                   0.0         2.521190e+30         1.629866e+31                  18.0
+fno_blocks.channel_mlp.0.fcs.1       1.995652e-15       6.585577e-16                 0.0        3.007546e-14        5.192758e-14                  0.0         5.208382e-11         1.486310e-10                   0.0         5.890392e+30         5.335197e+31                  16.0
+fno_blocks.channel_mlp.1.fcs.0       1.874115e-15       5.141859e-16                 0.0        7.448874e-14        9.608696e-14                  0.0         8.357585e-11         3.030558e-10                   0.0         2.156675e+28         1.988356e+29                  14.0
+fno_blocks.channel_mlp.1.fcs.1       1.761695e-15       7.013401e-16                 0.0        8.922362e-14        1.772174e-13                  0.0         4.498062e-10         1.692316e-09                   0.0         3.574051e+30         3.261903e+31                  11.0
+fno_blocks.channel_mlp.2.fcs.0       1.785332e-15       1.716668e-15                 0.0        1.945721e-13        3.678686e-13                  0.0         3.771225e-10         1.206655e-09                   0.0         3.779673e+29         3.224774e+30                  17.0
+fno_blocks.channel_mlp.2.fcs.1       1.027381e-15       7.413155e-16                 0.0        9.605073e-14        2.429175e-13                  0.0         4.143593e-10         9.948008e-10                   0.0         5.485492e+29         5.052132e+30                  14.0
+fno_blocks.channel_mlp.3.fcs.0       2.771182e-15       5.557213e-15                 0.0        1.064781e-12        1.883466e-12                  0.0         4.755548e-09         2.526050e-08                   0.0         7.649890e+29         4.955308e+30                  14.0
+fno_blocks.channel_mlp.3.fcs.1       7.624139e-16       2.428902e-15                 0.0        2.633412e-13        5.261892e-13                  0.0         2.400058e-09         7.483156e-09                   0.0         7.882265e+31         4.601654e+32                  24.0
+                 lifting.fcs.0       1.971935e-15       2.733095e-15                 0.0        1.698700e-13        3.745104e-13                  0.0         1.187845e-10         3.680325e-10                   0.0         3.478916e+26         3.187005e+27                  15.0
+                 lifting.fcs.1       0.000000e+00       0.000000e+00                 0.0        6.261993e-14        1.236962e-13                  0.0         5.633497e-11         2.168293e-10                   0.0         2.698766e+28         1.598984e+29                  28.0
+              projection.fcs.0       0.000000e+00       0.000000e+00                 0.0        2.765817e-13        7.102027e-13                  0.0         1.487977e-07         7.544274e-07                   0.0         3.130328e+26         2.278564e+27                   6.0
+              projection.fcs.1       1.202133e-16       4.185179e-16                 0.0        2.427013e-11        6.177127e-11                  0.0         5.313747e-07         1.205742e-06                   0.0         2.103386e+31         1.704821e+32                  25.0
+
+
+--- Multi-Bit Activation Faults ---
+                         Layer  Q1 (bits 0-7)_MSE  Q1 (bits 0-7)_Std  Q1 (bits 0-7)_NaN%  Q2 (bits 8-15)_MSE  Q2 (bits 8-15)_Std  Q2 (bits 8-15)_NaN%  Q3 (bits 16-23)_MSE  Q3 (bits 16-23)_Std  Q3 (bits 16-23)_NaN%  Q4 (bits 24-31)_MSE  Q4 (bits 24-31)_Std  Q4 (bits 24-31)_NaN%
+            fno_blocks.convs.0       1.497590e-15       6.625663e-17                 0.0        1.851363e-15        6.402131e-17                  0.0         2.782842e-14         6.970851e-15                   0.0                  NaN                  NaN                 100.0
+            fno_blocks.convs.1       7.971109e-16       5.929075e-17                 0.0        1.595548e-15        7.210760e-17                  0.0         6.914335e-14         1.547593e-14                   0.0                  NaN                  NaN                 100.0
+            fno_blocks.convs.2       7.427494e-17       1.254377e-17                 0.0        9.821998e-16        1.051264e-16                  0.0         1.663206e-13         5.411171e-14                   0.0         6.852291e+27                  0.0                  99.0
+            fno_blocks.convs.3       4.647463e-19       1.785848e-18                 0.0        1.022048e-16        3.869364e-17                  0.0         8.455155e-13         3.141059e-13                   0.0                  NaN                  NaN                 100.0
+   fno_blocks.fno_skips.0.conv       1.373645e-15       7.824473e-17                 0.0        1.771227e-15        6.025157e-17                  0.0         1.142848e-14         3.326533e-15                   0.0         4.873206e+24                  0.0                  99.0
+   fno_blocks.fno_skips.1.conv       5.585552e-16       5.949820e-17                 0.0        1.303089e-15        6.410477e-17                  0.0         1.031461e-14         2.231103e-15                   0.0         1.336734e+13                  0.0                  99.0
+   fno_blocks.fno_skips.2.conv       4.467523e-17       9.312010e-18                 0.0        4.887389e-16        6.149271e-17                  0.0         2.072346e-14         4.213286e-15                   0.0         2.572272e+24                  0.0                  99.0
+   fno_blocks.fno_skips.3.conv       1.208513e-19       7.441991e-19                 0.0        2.717957e-17        1.379591e-17                  0.0         7.153857e-14         3.226231e-14                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.0.fcs.0       1.589348e-15       6.001515e-17                 0.0        2.078271e-15        8.216521e-17                  0.0         1.320694e-13         3.577034e-14                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.0.fcs.1       1.572160e-15       6.064212e-17                 0.0        2.322903e-15        1.099774e-16                  0.0         1.493392e-12         8.702049e-13                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.1.fcs.0       9.186550e-16       6.093633e-17                 0.0        2.029741e-15        1.515334e-16                  0.0         2.821481e-13         6.987988e-14                   0.0         8.480332e+15                  0.0                  99.0
+fno_blocks.channel_mlp.1.fcs.1       9.808142e-16       5.712626e-17                 0.0        2.753916e-15        1.836702e-16                  0.0         2.614055e-12         1.035275e-12                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.2.fcs.0       1.007227e-16       1.621426e-17                 0.0        1.407527e-15        1.348268e-16                  0.0         8.053541e-13         4.124771e-13                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.2.fcs.1       1.676529e-16       2.421879e-17                 0.0        3.091825e-15        3.899744e-16                  0.0         1.737270e-11         1.174436e-11                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.3.fcs.0       7.298574e-19       2.024448e-18                 0.0        1.494053e-16        4.311977e-17                  0.0         2.622462e-12         1.118386e-12                   0.0                  NaN                  NaN                 100.0
+fno_blocks.channel_mlp.3.fcs.1       2.568128e-19       1.073511e-18                 0.0        4.861052e-16        1.859466e-16                  0.0         4.941103e-11         2.779778e-11                   0.0                  NaN                  NaN                 100.0
+                 lifting.fcs.0       1.275672e-17       2.432148e-17                 0.0        1.648886e-15        1.560552e-16                  0.0         3.508823e-13         4.016239e-13                   0.0                  NaN                  NaN                 100.0
+                 lifting.fcs.1       1.859454e-15       6.192748e-17                 0.0        2.260040e-15        1.043208e-16                  0.0         4.407695e-13         2.708389e-13                   0.0                  NaN                  NaN                 100.0
+              projection.fcs.0       2.576190e-20       9.865798e-21                 0.0        2.021085e-15        8.859637e-16                  0.0         1.931512e-10         1.005961e-10                   0.0         2.383350e+21                  0.0                  99.0
+              projection.fcs.1       2.854745e-23       8.511252e-24                 0.0        1.778835e-18        4.662479e-19                  0.0         1.259510e-13         3.242156e-14                   0.0                  NaN                  NaN                 100.0
+
+============================================================
+SPECTRAL CONVOLUTION: REAL vs IMAGINARY COMPONENT SENSITIVITY (MULTI-BIT)
+============================================================
+
+Q1 (bits 0-7):
+  fno_blocks.convs.0 [Real]: 4.713678e-16
+  fno_blocks.convs.0 [Imag]: 3.742210e-16
+  fno_blocks.convs.1 [Real]: 2.000959e-16
+  fno_blocks.convs.1 [Imag]: 1.962226e-16
+  fno_blocks.convs.2 [Real]: 1.130353e-17
+  fno_blocks.convs.2 [Imag]: 1.064160e-17
+  fno_blocks.convs.3 [Real]: 3.461335e-22
+  fno_blocks.convs.3 [Imag]: 8.953301e-21
+
+Q2 (bits 8-15):
+  fno_blocks.convs.0 [Real]: 1.537309e-15
+  fno_blocks.convs.0 [Imag]: 1.518818e-15
+  fno_blocks.convs.1 [Real]: 9.920665e-16
+  fno_blocks.convs.1 [Imag]: 9.502417e-16
+  fno_blocks.convs.2 [Real]: 1.461296e-16
+  fno_blocks.convs.2 [Imag]: 1.981754e-16
+  fno_blocks.convs.3 [Real]: 3.101507e-17
+  fno_blocks.convs.3 [Imag]: 2.160391e-18
+
+Q3 (bits 16-23):
+  fno_blocks.convs.0 [Real]: 3.611212e-15
+  fno_blocks.convs.0 [Imag]: 2.034659e-15
+  fno_blocks.convs.1 [Real]: 2.107799e-15
+  fno_blocks.convs.1 [Imag]: 2.925611e-15
+  fno_blocks.convs.2 [Real]: 2.860275e-15
+  fno_blocks.convs.2 [Imag]: 6.339775e-15
+  fno_blocks.convs.3 [Real]: 2.847866e-14
+  fno_blocks.convs.3 [Imag]: 8.099485e-16
+
+Q4 (bits 24-31):
+  fno_blocks.convs.0 [Real]: 5.169469e+30
+  fno_blocks.convs.0 [Imag]: 4.635556e+25
+  fno_blocks.convs.1 [Real]: 2.520951e+28
+  fno_blocks.convs.1 [Imag]: 4.637441e+26
+  fno_blocks.convs.2 [Real]: 3.489628e+30
+  fno_blocks.convs.2 [Imag]: 2.201600e+30
+  fno_blocks.convs.3 [Real]: 2.914925e+27
+  fno_blocks.convs.3 [Imag]: 3.114679e+27
+
+============================================================
+MOST CRITICAL BIT QUADRANTS (MULTI-BIT FAULTS)
+============================================================
+
+Q1 (bits 0-7):
+  Weight NaN Rate: 0.0%
+  Activation NaN Rate: 0.0%
+
+Q2 (bits 8-15):
+  Weight NaN Rate: 0.0%
+  Activation NaN Rate: 0.0%
+
+Q3 (bits 16-23):
+  Weight NaN Rate: 0.0%
+  Activation NaN Rate: 0.0%
+
+Q4 (bits 24-31):
+  Weight NaN Rate: 18.0%
+  Activation NaN Rate: 99.7%
